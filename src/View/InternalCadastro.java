@@ -4,6 +4,7 @@
  */
 package View;
 
+import java.awt.Color;
 import javax.swing.UIManager;
 
 /**
@@ -11,21 +12,24 @@ import javax.swing.UIManager;
  * @author gusta
  */
 public class InternalCadastro extends javax.swing.JInternalFrame {
-
+    
     private static InternalCadastro instance;
-
+    
     public static InternalCadastro getInstance() {
         if (instance == null) {
             instance = new InternalCadastro();
         }
         return instance;
     }
+
     /**
      * Creates new form InternalCadastro
      */
     public InternalCadastro() {
         initComponents();
-       
+        //this.getContentPane().setBackground(Color.decode("#1d5e69"));
+        // Codigo para definir a cor do jTabblaPane selecionado
+        //this.jTabbedPane1.setBackgroundAt(0, Color.darkGray);
     }
 
     /**
@@ -38,15 +42,17 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jTabbedPane4 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jTabbedPane4 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createEtchedBorder());
         setClosable(true);
@@ -61,33 +67,11 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         }
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-
-        jTabbedPane4.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-
-        jLabel3.setText("Aqui se cadastra um Cliente");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(356, 356, 356)
-                .addComponent(jLabel3)
-                .addContainerGap(428, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addComponent(jLabel3)
-                .addContainerGap(359, Short.MAX_VALUE))
-        );
-
-        jTabbedPane4.addTab("tab1", jPanel1);
-
-        jTabbedPane1.addTab("Cliente", jTabbedPane4);
+        jTabbedPane1.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
 
         jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel4.setText("Aqui se cadastra um Imovel");
 
@@ -98,21 +82,23 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(356, 356, 356)
                 .addComponent(jLabel4)
-                .addContainerGap(429, Short.MAX_VALUE))
+                .addContainerGap(539, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addComponent(jLabel4)
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addContainerGap(468, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("tab1", jPanel2);
+        jTabbedPane2.addTab("Consulta", jPanel2);
 
         jTabbedPane1.addTab("Imovel", jTabbedPane2);
 
         jTabbedPane3.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel5.setText("Aqui se cadastra um usuario");
 
@@ -123,35 +109,86 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(356, 356, 356)
                 .addComponent(jLabel5)
-                .addContainerGap(425, Short.MAX_VALUE))
+                .addContainerGap(536, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addComponent(jLabel5)
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addContainerGap(468, Short.MAX_VALUE))
         );
 
-        jTabbedPane3.addTab("tab1", jPanel3);
+        jTabbedPane3.addTab("Consulta", jPanel3);
 
         jTabbedPane1.addTab("Usuario", jTabbedPane3);
+
+        jTabbedPane4.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane4.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Nirmala UI", 1, 32)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(243, 225, 182));
+        jLabel3.setText("Área do Cliente");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(363, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(358, 358, 358))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(546, 546, 546))
+        );
+
+        jTabbedPane4.addTab("Cadastro Basico", jPanel1);
+
+        jLabel6.setFont(new java.awt.Font("Nirmala UI", 1, 32)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(243, 225, 182));
+        jLabel6.setText("Cadastro Completo");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(305, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(358, 358, 358))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(546, 546, 546))
+        );
+
+        jTabbedPane4.addTab("Cadastro Completo", jPanel5);
+
+        jTabbedPane1.addTab("Cliente", jTabbedPane4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1054, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(370, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(279, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(374, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(273, Short.MAX_VALUE))
         );
 
         setBounds(0, 0, 1453, 913);
@@ -162,9 +199,11 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
