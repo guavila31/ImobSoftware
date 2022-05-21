@@ -20,6 +20,8 @@ public class ViewLogin extends javax.swing.JFrame {
      */
     public ViewLogin() {
         initComponents();
+        this.btnCancelarLog.setBackground(Color.decode("#fa3419"));
+        this.btnCancelarLog.setForeground(Color.decode("#f3e1b6"));
     }
 
     /**
@@ -33,7 +35,7 @@ public class ViewLogin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCancelarLog = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
@@ -42,6 +44,7 @@ public class ViewLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(750, 500));
         setResizable(false);
+        getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -56,71 +59,47 @@ public class ViewLogin extends javax.swing.JFrame {
             .addGap(0, 284, Short.MAX_VALUE)
         );
 
-        jButton1.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(50, 80, 297, 286);
+
+        jButton1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(243, 225, 182));
         jButton1.setText("Entrar");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(370, 315, 150, 50);
 
-        jButton2.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(243, 225, 182));
-        jButton2.setText("Cancelar");
+        btnCancelarLog.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        btnCancelarLog.setForeground(new java.awt.Color(243, 225, 182));
+        btnCancelarLog.setText("Cancelar");
+        getContentPane().add(btnCancelarLog);
+        btnCancelarLog.setBounds(563, 315, 150, 50);
 
         jLabel1.setBackground(new java.awt.Color(243, 225, 182));
-        jLabel1.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Nirmala UI", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(243, 225, 182));
         jLabel1.setText("Login");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(370, 80, 59, 32);
 
         jLabel2.setBackground(new java.awt.Color(243, 225, 182));
-        jLabel2.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Nirmala UI", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(243, 225, 182));
         jLabel2.setText("Senha");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(370, 190, 66, 32);
 
+        jPasswordField1.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 16)); // NOI18N
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jPasswordField1);
+        jPasswordField1.setBounds(370, 230, 343, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField1)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(43, 43, 43)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jPasswordField1))
-                    .addComponent(jLabel2))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(107, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(130, 130, 130))
-        );
+        jTextField1.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 16)); // NOI18N
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(370, 120, 343, 40);
 
         pack();
         setLocationRelativeTo(null);
@@ -159,6 +138,7 @@ public class ViewLogin extends javax.swing.JFrame {
         FlatLightLaf.setup(new FlatMaterialOceanicContrastIJTheme());
         UIManager.put("Button.arc", 10);
         UIManager.put("TextComponent.arc", 10);
+        UIManager.put("PasswordField.showRevealButton", true);
         UIManager.put("Button.background", Color.decode("#7cbc9a"));
 
 
@@ -171,8 +151,8 @@ public class ViewLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelarLog;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
