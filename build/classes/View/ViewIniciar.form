@@ -14,6 +14,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Administrador"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagem/cadeado.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Controle de Acesso"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
@@ -49,7 +59,8 @@
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jDesktopPane1" max="32767" attributes="0"/>
+              <Component id="jDesktopPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -95,13 +106,13 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="32" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton4" alignment="1" min="-2" pref="285" max="-2" attributes="0"/>
+                      <Component id="btnRelatorio" alignment="1" min="-2" pref="285" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButton1" alignment="0" pref="285" max="32767" attributes="0"/>
-                          <Component id="jButton2" alignment="0" pref="285" max="32767" attributes="0"/>
-                          <Component id="jButton6" alignment="0" pref="285" max="32767" attributes="0"/>
-                          <Component id="jButton5" alignment="0" pref="285" max="32767" attributes="0"/>
-                          <Component id="jButton7" pref="285" max="32767" attributes="0"/>
+                          <Component id="btnSimulacao" alignment="0" pref="285" max="32767" attributes="0"/>
+                          <Component id="btnContrato" alignment="0" pref="285" max="32767" attributes="0"/>
+                          <Component id="btnAjuda" alignment="0" pref="285" max="32767" attributes="0"/>
+                          <Component id="btnInformacoes" alignment="0" pref="285" max="32767" attributes="0"/>
+                          <Component id="btnCadastro" pref="285" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
@@ -116,17 +127,17 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" pref="200" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="jButton7" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnCadastro" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnSimulacao" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnContrato" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton4" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnRelatorio" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton5" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnInformacoes" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton6" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnAjuda" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -167,7 +178,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btnSimulacao">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="22" style="1"/>
@@ -181,10 +192,10 @@
             <Property name="text" type="java.lang.String" value="Simula&#xe7;&#xe3;o"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSimulacaoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="btnContrato">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="22" style="1"/>
@@ -198,10 +209,10 @@
             <Property name="text" type="java.lang.String" value="Contrato"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnContratoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="btnRelatorio">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="22" style="1"/>
@@ -215,7 +226,7 @@
             <Property name="text" type="java.lang.String" value="Relat&#xf3;rio"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="btnInformacoes">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="22" style="1"/>
@@ -226,10 +237,13 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagem/botao-de-informacao.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Sobre"/>
+            <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInformacoesActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="btnAjuda">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="22" style="1"/>
@@ -243,7 +257,7 @@
             <Property name="text" type="java.lang.String" value="Ajuda"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
+        <Component class="javax.swing.JButton" name="btnCadastro">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="22" style="1"/>
@@ -258,7 +272,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastroActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -268,15 +282,47 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="758" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel5" min="-2" pref="2000" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="555" max="-2" attributes="0"/>
+                          <Component id="jLabel4" min="-2" pref="500" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="500" max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="881" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagem/predios.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="a"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagem/Imob_500px.png"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
     </Container>
   </SubComponents>
 </Form>

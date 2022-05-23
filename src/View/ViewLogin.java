@@ -34,6 +34,7 @@ public class ViewLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btnCancelarLog = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -47,20 +48,15 @@ public class ViewLogin extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setLayout(null);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 295, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 284, Short.MAX_VALUE)
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Imob_300px.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 300, 300);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(50, 80, 297, 286);
+        jPanel1.setBounds(50, 80, 300, 300);
 
         jButton1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(243, 225, 182));
@@ -155,6 +151,7 @@ public class ViewLogin extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;

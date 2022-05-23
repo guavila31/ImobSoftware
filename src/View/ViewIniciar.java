@@ -39,15 +39,18 @@ public class ViewIniciar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnSimulacao = new javax.swing.JButton();
+        btnContrato = new javax.swing.JButton();
+        btnRelatorio = new javax.swing.JButton();
+        btnInformacoes = new javax.swing.JButton();
+        btnAjuda = new javax.swing.JButton();
+        btnCadastro = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(".::ImobSoftware::.");
@@ -68,49 +71,54 @@ public class ViewIniciar extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/LogoSDC.png"))); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(243, 225, 182));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/pagamento-em-dinheiro.png"))); // NOI18N
-        jButton1.setText("Simulação");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSimulacao.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
+        btnSimulacao.setForeground(new java.awt.Color(243, 225, 182));
+        btnSimulacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/pagamento-em-dinheiro.png"))); // NOI18N
+        btnSimulacao.setText("Simulação");
+        btnSimulacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSimulacaoActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(243, 225, 182));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/contrato_1.png"))); // NOI18N
-        jButton2.setText("Contrato");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnContrato.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
+        btnContrato.setForeground(new java.awt.Color(243, 225, 182));
+        btnContrato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/contrato_1.png"))); // NOI18N
+        btnContrato.setText("Contrato");
+        btnContrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnContratoActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(243, 225, 182));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/relatorio.png"))); // NOI18N
-        jButton4.setText("Relatório");
+        btnRelatorio.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
+        btnRelatorio.setForeground(new java.awt.Color(243, 225, 182));
+        btnRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/relatorio.png"))); // NOI18N
+        btnRelatorio.setText("Relatório");
 
-        jButton5.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(243, 225, 182));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/botao-de-informacao.png"))); // NOI18N
-        jButton5.setText("Sobre");
-
-        jButton6.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(243, 225, 182));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/questao.png"))); // NOI18N
-        jButton6.setText("Ajuda");
-
-        jButton7.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(243, 225, 182));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/contrato (1)_1.png"))); // NOI18N
-        jButton7.setText("Cadastro");
-        jButton7.setToolTipText("");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnInformacoes.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
+        btnInformacoes.setForeground(new java.awt.Color(243, 225, 182));
+        btnInformacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/botao-de-informacao.png"))); // NOI18N
+        btnInformacoes.setText("Informações");
+        btnInformacoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnInformacoesActionPerformed(evt);
+            }
+        });
+
+        btnAjuda.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
+        btnAjuda.setForeground(new java.awt.Color(243, 225, 182));
+        btnAjuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/questao.png"))); // NOI18N
+        btnAjuda.setText("Ajuda");
+
+        btnCadastro.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
+        btnCadastro.setForeground(new java.awt.Color(243, 225, 182));
+        btnCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/contrato (1)_1.png"))); // NOI18N
+        btnCadastro.setText("Cadastro");
+        btnCadastro.setToolTipText("");
+        btnCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroActionPerformed(evt);
             }
         });
 
@@ -135,13 +143,13 @@ public class ViewIniciar extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRelatorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)))
+                        .addComponent(btnSimulacao, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                        .addComponent(btnContrato, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                        .addComponent(btnAjuda, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                        .addComponent(btnInformacoes, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                        .addComponent(btnCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)))
                 .addGap(28, 28, 28))
         );
         jPanel1Layout.setVerticalGroup(
@@ -152,36 +160,60 @@ public class ViewIniciar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSimulacao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnInformacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAjuda, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/predios.png"))); // NOI18N
+        jLabel5.setText("a");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Imob_500px.png"))); // NOI18N
+
+        jDesktopPane1.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 758, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 2000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(555, 555, 555)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(500, 500, 500))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 881, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel5)
+                .addContainerGap())
         );
 
         jMenuBar1.setRequestFocusEnabled(false);
 
         jMenu1.setText("Administrador");
+
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/cadeado.png"))); // NOI18N
+        jMenuItem1.setText("Controle de Acesso");
+        jMenu1.add(jMenuItem1);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -194,7 +226,8 @@ public class ViewIniciar extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDesktopPane1))
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,7 +236,7 @@ public class ViewIniciar extends javax.swing.JFrame {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         // TODO add your handling code here:
         InternalCadastro tela = new InternalCadastro().getInstance();
         tela.pack();
@@ -225,12 +258,13 @@ public class ViewIniciar extends javax.swing.JFrame {
                 e2.printStackTrace();
             }
         }
-        this.jButton7.setBackground(Color.decode("#fa3419"));
-        this.jButton1.setBackground(Color.decode("#7cbc9a"));
-        this.jButton2.setBackground(Color.decode("#7cbc9a"));
-    }//GEN-LAST:event_jButton7ActionPerformed
+        this.btnCadastro.setBackground(Color.decode("#fa3419"));
+        this.btnSimulacao.setBackground(Color.decode("#7cbc9a"));
+        this.btnContrato.setBackground(Color.decode("#7cbc9a"));
+        this.btnInformacoes.setBackground(Color.decode("#7cbc9a"));
+    }//GEN-LAST:event_btnCadastroActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSimulacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimulacaoActionPerformed
         // TODO add your handling code here:
         InternalSimulacao tela = new InternalSimulacao().getInstance();
         tela.pack();
@@ -252,12 +286,13 @@ public class ViewIniciar extends javax.swing.JFrame {
                 e2.printStackTrace();
             }
         }
-        this.jButton1.setBackground(Color.decode("#fa3419"));
-        this.jButton2.setBackground(Color.decode("#7cbc9a"));
-        this.jButton7.setBackground(Color.decode("#7cbc9a"));
-    }//GEN-LAST:event_jButton1ActionPerformed
+        this.btnSimulacao.setBackground(Color.decode("#fa3419"));
+        this.btnContrato.setBackground(Color.decode("#7cbc9a"));
+        this.btnCadastro.setBackground(Color.decode("#7cbc9a"));
+        this.btnInformacoes.setBackground(Color.decode("#7cbc9a"));
+    }//GEN-LAST:event_btnSimulacaoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratoActionPerformed
         // TODO add your handling code here:
         InternalContrato tela = new InternalContrato().getInstance();
         tela.pack();
@@ -279,10 +314,40 @@ public class ViewIniciar extends javax.swing.JFrame {
                 e2.printStackTrace();
             }
         }
-        this.jButton2.setBackground(Color.decode("#fa3419"));
-        this.jButton1.setBackground(Color.decode("#7cbc9a"));
-        this.jButton7.setBackground(Color.decode("#7cbc9a"));
-    }//GEN-LAST:event_jButton2ActionPerformed
+        this.btnContrato.setBackground(Color.decode("#fa3419"));
+        this.btnSimulacao.setBackground(Color.decode("#7cbc9a"));
+        this.btnCadastro.setBackground(Color.decode("#7cbc9a"));
+        this.btnInformacoes.setBackground(Color.decode("#7cbc9a"));
+    }//GEN-LAST:event_btnContratoActionPerformed
+
+    private void btnInformacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformacoesActionPerformed
+        // TODO add your handling code here:
+        InternalInformacoes tela = new InternalInformacoes().getInstance();
+        tela.pack();
+        if (!tela.isVisible()) {
+            jDesktopPane1.add(tela);
+            tela.setVisible(true);
+            try {
+                tela.setMaximum(true);
+                tela.setSelected(true);
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        } else {
+            tela.moveToFront();
+            try {
+                tela.setMaximum(true);
+                tela.setSelected(true);
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+        this.btnContrato.setBackground(Color.decode("#7cbc9a"));
+        this.btnSimulacao.setBackground(Color.decode("#7cbc9a"));
+        this.btnCadastro.setBackground(Color.decode("#7cbc9a"));
+        this.btnInformacoes.setBackground(Color.decode("#fa3419"));
+
+    }//GEN-LAST:event_btnInformacoesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,7 +382,7 @@ public class ViewIniciar extends javax.swing.JFrame {
         //</editor-fold>
         FlatLightLaf.setup(new FlatMaterialOceanicContrastIJTheme());
         UIManager.put("Button.arc", 10);
-        UIManager.put("Desktop.background", Color.decode("#f3e1b6"));
+        UIManager.put("Desktop.background", Color.decode("#263238"));
         UIManager.put("Button.background", Color.decode("#7cbc9a"));
         //UIManager.put("Button.FocusColor", Color.decode("#aaa"));
         /* Create and display the form */
@@ -329,18 +394,21 @@ public class ViewIniciar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton btnAjuda;
+    private javax.swing.JButton btnCadastro;
+    private javax.swing.JButton btnContrato;
+    private javax.swing.JButton btnInformacoes;
+    private javax.swing.JButton btnRelatorio;
+    private javax.swing.JButton btnSimulacao;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
