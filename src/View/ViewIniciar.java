@@ -72,8 +72,7 @@ public class ViewIniciar extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/LogoSDC.png"))); // NOI18N
 
         btnSimulacao.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        btnSimulacao.setForeground(new java.awt.Color(243, 225, 182));
-        btnSimulacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/pagamento-em-dinheiro.png"))); // NOI18N
+        btnSimulacao.setForeground(new java.awt.Color(51, 51, 51));
         btnSimulacao.setText("Simulação");
         btnSimulacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,8 +81,7 @@ public class ViewIniciar extends javax.swing.JFrame {
         });
 
         btnContrato.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        btnContrato.setForeground(new java.awt.Color(243, 225, 182));
-        btnContrato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/contrato_1.png"))); // NOI18N
+        btnContrato.setForeground(new java.awt.Color(51, 51, 51));
         btnContrato.setText("Contrato");
         btnContrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,13 +90,11 @@ public class ViewIniciar extends javax.swing.JFrame {
         });
 
         btnRelatorio.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        btnRelatorio.setForeground(new java.awt.Color(243, 225, 182));
-        btnRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/relatorio.png"))); // NOI18N
+        btnRelatorio.setForeground(new java.awt.Color(51, 51, 51));
         btnRelatorio.setText("Relatório");
 
         btnInformacoes.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        btnInformacoes.setForeground(new java.awt.Color(243, 225, 182));
-        btnInformacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/botao-de-informacao.png"))); // NOI18N
+        btnInformacoes.setForeground(new java.awt.Color(51, 51, 51));
         btnInformacoes.setText("Informações");
         btnInformacoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,13 +103,11 @@ public class ViewIniciar extends javax.swing.JFrame {
         });
 
         btnAjuda.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        btnAjuda.setForeground(new java.awt.Color(243, 225, 182));
-        btnAjuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/questao.png"))); // NOI18N
+        btnAjuda.setForeground(new java.awt.Color(51, 51, 51));
         btnAjuda.setText("Ajuda");
 
         btnCadastro.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        btnCadastro.setForeground(new java.awt.Color(243, 225, 182));
-        btnCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/contrato (1)_1.png"))); // NOI18N
+        btnCadastro.setForeground(new java.awt.Color(51, 51, 51));
         btnCadastro.setText("Cadastro");
         btnCadastro.setToolTipText("");
         btnCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -192,7 +186,7 @@ public class ViewIniciar extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 2000, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(555, 555, 555)
+                        .addGap(539, 539, 539)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(500, 500, 500))
         );
@@ -259,9 +253,9 @@ public class ViewIniciar extends javax.swing.JFrame {
             }
         }
         this.btnCadastro.setBackground(Color.decode("#fa3419"));
-        this.btnSimulacao.setBackground(Color.decode("#7cbc9a"));
-        this.btnContrato.setBackground(Color.decode("#7cbc9a"));
-        this.btnInformacoes.setBackground(Color.decode("#7cbc9a"));
+        this.btnSimulacao.setBackground(Color.decode("#f3e1b6"));
+        this.btnContrato.setBackground(Color.decode("#f3e1b6"));
+        this.btnInformacoes.setBackground(Color.decode("#f3e1b6"));
     }//GEN-LAST:event_btnCadastroActionPerformed
 
     private void btnSimulacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimulacaoActionPerformed
@@ -287,9 +281,9 @@ public class ViewIniciar extends javax.swing.JFrame {
             }
         }
         this.btnSimulacao.setBackground(Color.decode("#fa3419"));
-        this.btnContrato.setBackground(Color.decode("#7cbc9a"));
-        this.btnCadastro.setBackground(Color.decode("#7cbc9a"));
-        this.btnInformacoes.setBackground(Color.decode("#7cbc9a"));
+        this.btnContrato.setBackground(Color.decode("#f3e1b6"));
+        this.btnCadastro.setBackground(Color.decode("#f3e1b6"));
+        this.btnInformacoes.setBackground(Color.decode("#f3e1b6"));
     }//GEN-LAST:event_btnSimulacaoActionPerformed
 
     private void btnContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratoActionPerformed
@@ -315,9 +309,9 @@ public class ViewIniciar extends javax.swing.JFrame {
             }
         }
         this.btnContrato.setBackground(Color.decode("#fa3419"));
-        this.btnSimulacao.setBackground(Color.decode("#7cbc9a"));
-        this.btnCadastro.setBackground(Color.decode("#7cbc9a"));
-        this.btnInformacoes.setBackground(Color.decode("#7cbc9a"));
+        this.btnSimulacao.setBackground(Color.decode("#f3e1b6"));
+        this.btnCadastro.setBackground(Color.decode("#f3e1b6"));
+        this.btnInformacoes.setBackground(Color.decode("#f3e1b6"));
     }//GEN-LAST:event_btnContratoActionPerformed
 
     private void btnInformacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformacoesActionPerformed
@@ -342,9 +336,9 @@ public class ViewIniciar extends javax.swing.JFrame {
                 e2.printStackTrace();
             }
         }
-        this.btnContrato.setBackground(Color.decode("#7cbc9a"));
-        this.btnSimulacao.setBackground(Color.decode("#7cbc9a"));
-        this.btnCadastro.setBackground(Color.decode("#7cbc9a"));
+        this.btnContrato.setBackground(Color.decode("#f3e1b6"));
+        this.btnSimulacao.setBackground(Color.decode("#f3e1b6"));
+        this.btnCadastro.setBackground(Color.decode("#f3e1b6"));
         this.btnInformacoes.setBackground(Color.decode("#fa3419"));
 
     }//GEN-LAST:event_btnInformacoesActionPerformed
@@ -383,7 +377,7 @@ public class ViewIniciar extends javax.swing.JFrame {
         FlatLightLaf.setup(new FlatMaterialOceanicContrastIJTheme());
         UIManager.put("Button.arc", 10);
         UIManager.put("Desktop.background", Color.decode("#263238"));
-        UIManager.put("Button.background", Color.decode("#7cbc9a"));
+        UIManager.put("Button.background", Color.decode("#f3e1b6"));
         //UIManager.put("Button.FocusColor", Color.decode("#aaa"));
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
