@@ -54,18 +54,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
 
-        setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        setClosable(true);
-        setIconifiable(true);
-        setTitle("..:Cadastro:..");
-        setToolTipText("");
-        setMaximumSize(null);
-        try {
-            setSelected(true);
-        } catch (java.beans.PropertyVetoException e1) {
-            e1.printStackTrace();
-        }
-
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         jTabbedPane1.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
 
@@ -174,21 +162,27 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Cliente", jTabbedPane4);
 
+        setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setClosable(true);
+        setIconifiable(true);
+        setTitle("..:Cadastro:..");
+        setToolTipText("");
+        setMaximumSize(null);
+        try {
+            setSelected(true);
+        } catch (java.beans.PropertyVetoException e1) {
+            e1.printStackTrace();
+        }
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(279, Short.MAX_VALUE))
+            .addGap(0, 1449, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(273, Short.MAX_VALUE))
+            .addGap(0, 878, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 1453, 913);
