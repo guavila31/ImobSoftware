@@ -232,7 +232,7 @@ public class ViewIniciar extends javax.swing.JFrame {
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         // TODO add your handling code here:
-       /* InternalCadastro tela = new InternalCadastro().getInstance();
+       InternalCadastro tela = new InternalCadastro().getInstance();
         tela.pack();
         if (!tela.isVisible()) {
             jDesktopPane1.add(tela);
@@ -256,7 +256,7 @@ public class ViewIniciar extends javax.swing.JFrame {
         this.btnSimulacao.setBackground(Color.decode("#f3e1b6"));
         this.btnContrato.setBackground(Color.decode("#f3e1b6"));
         this.btnInformacoes.setBackground(Color.decode("#f3e1b6"));
-*/
+
     }//GEN-LAST:event_btnCadastroActionPerformed
 
     private void btnSimulacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimulacaoActionPerformed
