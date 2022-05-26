@@ -219,7 +219,7 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         jSeparator1.setBounds(583, 55, 20, 325);
 
         getContentPane().add(jPanel5);
-        jPanel5.setBounds(80, 30, 1160, 400);
+        jPanel5.setBounds(70, 20, 1160, 400);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 30))); // NOI18N
         jPanel1.setLayout(null);

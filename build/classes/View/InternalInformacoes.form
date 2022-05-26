@@ -45,7 +45,7 @@
               <Color blue="b6" green="e1" red="f3" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
-              <TreeModel code="ImobSoftwere&#xa; Clientes&#xa;  blue&#xa;  violet&#xa;  red&#xa;  yellow&#xa; Im&#xf3;veis&#xa;  basketball&#xa;  soccer&#xa;  football&#xa;  hockey&#xa; Registro de Vendas&#xa;  hot dogs&#xa;  pizza&#xa;  ravioli&#xa;  bananas&#xa; Contratos&#xa;  aaaa&#xa;  bbbb&#xa;  ccccc&#xa; Tutorial&#xa;  aaaa&#xa;  bbbb&#xa;  cccc&#xa; Sobre&#xa;  aaaa&#xa;  bbbb&#xa;  cccc"/>
+              <TreeModel code="ImobSoftwere&#xa; Clientes&#xa;  Ficha de registro de Pessoa &#xa;  Pessoas Cadastradas&#xa; Im&#xf3;veis&#xa;  Ficha de cadastro de Im&#xf3;vel&#xa;  Ficha de registro de vendedor&#xa;  Im&#xf3;veis cadastrados&#xa;  Vendedores cadastrados&#xa; Registro de Vendas&#xa; Contratos&#xa; Tutorial&#xa;  Como cadastrar uma pessoa&#xa;  Como cadastrar um im&#xf3;vel&#xa;  Como imprimir&#xa;   Pessoas&#xa;   Imovel&#xa;   Vendedores&#xa;   Relat&#xf3;rios&#xa;   Contratos&#xa;  Onde encontrar&#xa;   Pessoas&#xa;   Imovel&#xa;   Vendedores&#xa;   Contratos&#xa; Sobre"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Pesquisar"/>
             <Property name="rowHeight" type="int" value="32"/>
