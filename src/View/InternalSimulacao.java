@@ -89,13 +89,17 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         btnNovo = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        setClosable(true);
         setIconifiable(true);
         setTitle("..:Simulação:..");
         setToolTipText("");
+        setMaximumSize(new java.awt.Dimension(1440, 884));
+        setMinimumSize(new java.awt.Dimension(1440, 884));
+        setName(""); // NOI18N
+        setNormalBounds(new java.awt.Rectangle(0, 0, 75, 0));
+        setPreferredSize(new java.awt.Dimension(1500, 1000));
         getContentPane().setLayout(null);
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
         jPanel5.setLayout(null);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 153, 142)), "Pessoa", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 20), new java.awt.Color(243, 225, 182))); // NOI18N
@@ -219,14 +223,14 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         jSeparator1.setBounds(583, 55, 20, 325);
 
         getContentPane().add(jPanel5);
-        jPanel5.setBounds(70, 20, 1160, 400);
+        jPanel5.setBounds(30, 20, 1160, 400);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 30))); // NOI18N
         jPanel1.setLayout(null);
         getContentPane().add(jPanel1);
         jPanel1.setBounds(12, 13, 961, 0);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
         jPanel2.setLayout(null);
 
         jSeparator3.setForeground(new java.awt.Color(35, 153, 142));
@@ -309,39 +313,39 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         jPanel7.setBounds(70, 60, 450, 325);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(80, 440, 1160, 400);
+        jPanel2.setBounds(30, 440, 1160, 400);
 
         brnEditar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         brnEditar.setForeground(new java.awt.Color(51, 51, 51));
         brnEditar.setText("Editar");
         getContentPane().add(brnEditar);
-        brnEditar.setBounds(580, 860, 175, 70);
+        brnEditar.setBounds(460, 860, 175, 70);
 
         btnPesquisar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnPesquisar.setForeground(new java.awt.Color(51, 51, 51));
         btnPesquisar.setText("Pesquisar");
         getContentPane().add(btnPesquisar);
-        btnPesquisar.setBounds(80, 860, 175, 70);
+        btnPesquisar.setBounds(20, 860, 175, 70);
 
         btnImprimir.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnImprimir.setForeground(new java.awt.Color(51, 51, 51));
         btnImprimir.setText("Imprimir");
         getContentPane().add(btnImprimir);
-        btnImprimir.setBounds(820, 860, 175, 70);
+        btnImprimir.setBounds(670, 860, 175, 70);
 
         btnCancelar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(51, 51, 51));
         btnCancelar.setText("Cancelar");
         getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(1065, 860, 175, 70);
+        btnCancelar.setBounds(880, 860, 175, 70);
 
         btnNovo.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnNovo.setForeground(new java.awt.Color(51, 51, 51));
         btnNovo.setText("Novo");
         getContentPane().add(btnNovo);
-        btnNovo.setBounds(330, 860, 175, 70);
+        btnNovo.setBounds(240, 860, 175, 70);
 
-        setBounds(0, 0, 1409, 984);
+        setBounds(0, 0, 1231, 984);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbxConjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxConjActionPerformed

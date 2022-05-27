@@ -43,10 +43,9 @@ public class ViewIniciar extends javax.swing.JFrame {
         btnContrato = new javax.swing.JButton();
         btnRelatorio = new javax.swing.JButton();
         btnInformacoes = new javax.swing.JButton();
-        btnAjuda = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
         btnCadastro = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -59,17 +58,24 @@ public class ViewIniciar extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(29, 94, 105));
         jPanel1.setToolTipText("");
+        jPanel1.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("MS UI Gothic", 0, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(243, 225, 182));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("USUÁRIO");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(12, 61, 321, 31);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/LogoSemFundo.png"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(90, 110, 187, 200);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/LogoSDC.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(12, 998, 80, 40);
 
         btnSimulacao.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
         btnSimulacao.setForeground(new java.awt.Color(51, 51, 51));
@@ -79,6 +85,8 @@ public class ViewIniciar extends javax.swing.JFrame {
                 btnSimulacaoActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSimulacao);
+        btnSimulacao.setBounds(50, 530, 285, 50);
 
         btnContrato.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
         btnContrato.setForeground(new java.awt.Color(51, 51, 51));
@@ -88,10 +96,19 @@ public class ViewIniciar extends javax.swing.JFrame {
                 btnContratoActionPerformed(evt);
             }
         });
+        jPanel1.add(btnContrato);
+        btnContrato.setBounds(50, 610, 285, 50);
 
         btnRelatorio.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
         btnRelatorio.setForeground(new java.awt.Color(51, 51, 51));
         btnRelatorio.setText("Relatório");
+        btnRelatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRelatorioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRelatorio);
+        btnRelatorio.setBounds(50, 690, 285, 50);
 
         btnInformacoes.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
         btnInformacoes.setForeground(new java.awt.Color(51, 51, 51));
@@ -101,10 +118,20 @@ public class ViewIniciar extends javax.swing.JFrame {
                 btnInformacoesActionPerformed(evt);
             }
         });
+        jPanel1.add(btnInformacoes);
+        btnInformacoes.setBounds(50, 770, 285, 50);
 
-        btnAjuda.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
-        btnAjuda.setForeground(new java.awt.Color(51, 51, 51));
-        btnAjuda.setText("Ajuda");
+        btnMenu.setBackground(new java.awt.Color(250, 52, 25));
+        btnMenu.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
+        btnMenu.setForeground(new java.awt.Color(51, 51, 51));
+        btnMenu.setText("Menu");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMenu);
+        btnMenu.setBounds(50, 370, 285, 50);
 
         btnCadastro.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
         btnCadastro.setForeground(new java.awt.Color(51, 51, 51));
@@ -115,67 +142,11 @@ public class ViewIniciar extends javax.swing.JFrame {
                 btnCadastroActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 77, 77))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRelatorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnSimulacao, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(btnContrato, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(btnAjuda, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(btnInformacoes, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(btnCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)))
-                .addGap(28, 28, 28))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSimulacao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnInformacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAjuda, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/predios.png"))); // NOI18N
-        jLabel5.setText("a");
+        jPanel1.add(btnCadastro);
+        btnCadastro.setBounds(50, 450, 285, 50);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Imob_500px.png"))); // NOI18N
 
-        jDesktopPane1.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
@@ -183,21 +154,16 @@ public class ViewIniciar extends javax.swing.JFrame {
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 2000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(539, 539, 539)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(500, 500, 500))
+                .addGap(539, 539, 539)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1461, 1461, 1461))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addGap(25, 25, 25)
-                .addComponent(jLabel5)
-                .addContainerGap())
+                .addGap(538, 538, 538))
         );
 
         jMenuBar1.setRequestFocusEnabled(false);
@@ -217,8 +183,8 @@ public class ViewIniciar extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -232,31 +198,26 @@ public class ViewIniciar extends javax.swing.JFrame {
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         // TODO add your handling code here:
-       InternalCadastro tela = new InternalCadastro().getInstance();
-        tela.pack();
-        if (!tela.isVisible()) {
-            jDesktopPane1.add(tela);
-            tela.setVisible(true);
+        InternalCadastro telaCad = new InternalCadastro().getInstance();
+        telaCad.pack();
+        if (!telaCad.isVisible()) {
+            jDesktopPane1.add(telaCad);
+            telaCad.setVisible(true);
             try {
-                tela.setMaximum(true);
-                tela.setSelected(true);
+                //telaCad.setMaximum(true);
+                telaCad.setSelected(true);
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
         } else {
-            tela.moveToFront();
-            try {
-                tela.setMaximum(true);
-                tela.setSelected(true);
-            } catch (Exception e2) {
-                e2.printStackTrace();
-            }
+            telaCad.moveToFront();
         }
         this.btnCadastro.setBackground(Color.decode("#fa3419"));
         this.btnSimulacao.setBackground(Color.decode("#f3e1b6"));
         this.btnContrato.setBackground(Color.decode("#f3e1b6"));
         this.btnInformacoes.setBackground(Color.decode("#f3e1b6"));
-
+        this.btnRelatorio.setBackground(Color.decode("#f3e1b6"));
+        this.btnMenu.setBackground(Color.decode("#f3e1b6"));
     }//GEN-LAST:event_btnCadastroActionPerformed
 
     private void btnSimulacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimulacaoActionPerformed
@@ -267,24 +228,22 @@ public class ViewIniciar extends javax.swing.JFrame {
             jDesktopPane1.add(tela);
             tela.setVisible(true);
             try {
-                tela.setMaximum(true);
+                //tela.setMaximum(true);
                 tela.setSelected(true);
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
         } else {
             tela.moveToFront();
-            try {
-                tela.setMaximum(true);
-                tela.setSelected(true);
-            } catch (Exception e2) {
-                e2.printStackTrace();
-            }
+
         }
         this.btnSimulacao.setBackground(Color.decode("#fa3419"));
         this.btnContrato.setBackground(Color.decode("#f3e1b6"));
         this.btnCadastro.setBackground(Color.decode("#f3e1b6"));
         this.btnInformacoes.setBackground(Color.decode("#f3e1b6"));
+        this.btnRelatorio.setBackground(Color.decode("#f3e1b6"));
+        this.btnMenu.setBackground(Color.decode("#f3e1b6"));
+
     }//GEN-LAST:event_btnSimulacaoActionPerformed
 
     private void btnContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratoActionPerformed
@@ -295,24 +254,22 @@ public class ViewIniciar extends javax.swing.JFrame {
             jDesktopPane1.add(tela);
             tela.setVisible(true);
             try {
-                tela.setMaximum(true);
+                //tela.setMaximum(true);
                 tela.setSelected(true);
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
         } else {
             tela.moveToFront();
-            try {
-                tela.setMaximum(true);
-                tela.setSelected(true);
-            } catch (Exception e2) {
-                e2.printStackTrace();
-            }
+
         }
         this.btnContrato.setBackground(Color.decode("#fa3419"));
         this.btnSimulacao.setBackground(Color.decode("#f3e1b6"));
         this.btnCadastro.setBackground(Color.decode("#f3e1b6"));
         this.btnInformacoes.setBackground(Color.decode("#f3e1b6"));
+        this.btnRelatorio.setBackground(Color.decode("#f3e1b6"));
+        this.btnMenu.setBackground(Color.decode("#f3e1b6"));
+
     }//GEN-LAST:event_btnContratoActionPerformed
 
     private void btnInformacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformacoesActionPerformed
@@ -323,26 +280,64 @@ public class ViewIniciar extends javax.swing.JFrame {
             jDesktopPane1.add(tela);
             tela.setVisible(true);
             try {
-                tela.setMaximum(true);
+                //tela.setMaximum(true);
                 tela.setSelected(true);
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
         } else {
             tela.moveToFront();
-            try {
+            /*try {
                 tela.setMaximum(true);
                 tela.setSelected(true);
             } catch (Exception e2) {
                 e2.printStackTrace();
-            }
+            }*/
         }
         this.btnContrato.setBackground(Color.decode("#f3e1b6"));
         this.btnSimulacao.setBackground(Color.decode("#f3e1b6"));
         this.btnCadastro.setBackground(Color.decode("#f3e1b6"));
         this.btnInformacoes.setBackground(Color.decode("#fa3419"));
+        this.btnRelatorio.setBackground(Color.decode("#f3e1b6"));
+        this.btnMenu.setBackground(Color.decode("#f3e1b6"));
 
     }//GEN-LAST:event_btnInformacoesActionPerformed
+
+    private void btnRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioActionPerformed
+        // TODO add your handling code here:
+        InternalRelatorio tela = new InternalRelatorio().getInstance();
+        tela.pack();
+        if (!tela.isVisible()) {
+            jDesktopPane1.add(tela);
+            tela.setVisible(true);
+            try {
+            //    tela.setMaximum(true);
+                tela.setSelected(true);
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        } else {
+            tela.moveToFront();
+        }
+        this.btnContrato.setBackground(Color.decode("#f3e1b6"));
+        this.btnSimulacao.setBackground(Color.decode("#f3e1b6"));
+        this.btnCadastro.setBackground(Color.decode("#f3e1b6"));
+        this.btnRelatorio.setBackground(Color.decode("#fa3419"));
+        this.btnInformacoes.setBackground(Color.decode("#f3e1b6"));
+        this.btnMenu.setBackground(Color.decode("#f3e1b6"));
+
+
+    }//GEN-LAST:event_btnRelatorioActionPerformed
+
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        // TODO add your handling code here:
+        this.btnMenu.setBackground(Color.decode("#fa3419"));
+        this.btnCadastro.setBackground(Color.decode("#f3e1b6"));
+        this.btnSimulacao.setBackground(Color.decode("#f3e1b6"));
+        this.btnContrato.setBackground(Color.decode("#f3e1b6"));
+        this.btnInformacoes.setBackground(Color.decode("#f3e1b6"));
+        this.btnRelatorio.setBackground(Color.decode("#f3e1b6"));
+    }//GEN-LAST:event_btnMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,20 +374,22 @@ public class ViewIniciar extends javax.swing.JFrame {
         UIManager.put("Button.arc", 10);
         UIManager.put("Desktop.background", Color.decode("#263238"));
         UIManager.put("Button.background", Color.decode("#f3e1b6"));
+        UIManager.put("btnMenu.background", Color.decode("#f3e1b6"));
         //UIManager.put("Button.FocusColor", Color.decode("#aaa"));
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ViewIniciar().setVisible(true);
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAjuda;
     private javax.swing.JButton btnCadastro;
     private javax.swing.JButton btnContrato;
     private javax.swing.JButton btnInformacoes;
+    private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnRelatorio;
     private javax.swing.JButton btnSimulacao;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -400,7 +397,6 @@ public class ViewIniciar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;

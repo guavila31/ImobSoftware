@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.awt.Color;
+import javax.swing.UIManager;
+
 /**
  *
  * @author gusta
@@ -27,6 +30,10 @@ public class InternalContrato extends javax.swing.JInternalFrame {
      */
     public InternalContrato() {
         initComponents();
+        UIManager.put("Table.alternateRowColor", Color.decode("#232c31"));
+        //UIManager.put("Table.gridColor", Color.decode("#1d5e69"));
+        UIManager.put("Button.arc", 0);
+        UIManager.put("TextComponent.arc", 10);
     }
 
     /**
@@ -38,27 +45,187 @@ public class InternalContrato extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        setClosable(true);
-        setIconifiable(true);
-        setResizable(true);
-        setTitle("..:Contrato:..");
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1288, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 639, Short.MAX_VALUE)
-        );
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        setIconifiable(true);
+        setTitle("..:Contrato:..");
+        setPreferredSize(new java.awt.Dimension(1500, 1000));
+        getContentPane().setLayout(null);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setLayout(null);
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pesquisar Contratos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 24), new java.awt.Color(243, 225, 182))); // NOI18N
+        jPanel3.setLayout(null);
+        jPanel3.add(jTextField2);
+        jTextField2.setBounds(100, 80, 440, 30);
+
+        jLabel2.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        jLabel2.setText("Nome");
+        jPanel3.add(jLabel2);
+        jLabel2.setBounds(50, 80, 43, 22);
+
+        jLabel3.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        jLabel3.setText("CPF");
+        jPanel3.add(jLabel3);
+        jLabel3.setBounds(70, 130, 27, 22);
+        jPanel3.add(jTextField3);
+        jTextField3.setBounds(100, 130, 350, 30);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Botao_Pesquisar.png"))); // NOI18N
+        jPanel3.add(jButton1);
+        jButton1.setBounds(470, 120, 70, 40);
+        jPanel3.add(jSeparator1);
+        jSeparator1.setBounds(40, 170, 500, 10);
+
+        jLabel4.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        jLabel4.setText("Selecione o Imóvel");
+        jPanel3.add(jLabel4);
+        jLabel4.setBounds(100, 180, 140, 22);
+
+        jLabel5.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        jLabel5.setText("Selecione o Comprador");
+        jPanel3.add(jLabel5);
+        jLabel5.setBounds(100, 40, 170, 22);
+
+        jLabel6.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Endereco");
+        jPanel3.add(jLabel6);
+        jLabel6.setBounds(20, 210, 70, 20);
+
+        jLabel7.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        jLabel7.setText("Valor");
+        jPanel3.add(jLabel7);
+        jLabel7.setBounds(50, 260, 40, 20);
+        jPanel3.add(jTextField4);
+        jTextField4.setBounds(100, 260, 100, 30);
+        jPanel3.add(jTextField5);
+        jTextField5.setBounds(100, 210, 440, 30);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Botao_Pesquisar.png"))); // NOI18N
+        jPanel3.add(jButton2);
+        jButton2.setBounds(470, 250, 70, 40);
+
+        jLabel8.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        jLabel8.setText("Vendedor");
+        jPanel3.add(jLabel8);
+        jLabel8.setBounds(210, 260, 70, 20);
+        jPanel3.add(jTextField6);
+        jTextField6.setBounds(290, 260, 160, 30);
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(80, 70, 570, 310);
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pesquisar Contratos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 24), new java.awt.Color(243, 225, 182))); // NOI18N
+        jPanel4.setLayout(null);
+
+        jTextField1.setFont(new java.awt.Font("Nirmala UI", 0, 16)); // NOI18N
+        jTextField1.setText("Digite o CPF...");
+        jTextField1.setMargin(new java.awt.Insets(2, 6, 2, 2));
+        jPanel4.add(jTextField1);
+        jTextField1.setBounds(30, 40, 420, 35);
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Botao_Pesquisar.png"))); // NOI18N
+        jPanel4.add(jButton3);
+        jButton3.setBounds(470, 40, 70, 40);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Codigo", "CPF", "Comprador", "Compra"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jTable1.setCellSelectionEnabled(true);
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTable1.setFillsViewportHeight(true);
+        jTable1.getTableHeader().setResizingAllowed(false);
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel4.add(jScrollPane1);
+        jScrollPane1.setBounds(30, 90, 510, 270);
+
+        jPanel1.add(jPanel4);
+        jPanel4.setBounds(80, 410, 570, 380);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(60, 50, 730, 810);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setLayout(null);
+
+        jDesktopPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.add(jDesktopPane1);
+        jDesktopPane1.setBounds(0, 0, 570, 810);
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(830, 50, 570, 810);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

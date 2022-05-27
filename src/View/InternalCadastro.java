@@ -42,6 +42,57 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        panelCadPessoa = new javax.swing.JPanel();
+        lblNome = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        lblCPF = new javax.swing.JLabel();
+        txtCPF = new javax.swing.JTextField();
+        lblDataNasc = new javax.swing.JLabel();
+        txtDataNasc = new javax.swing.JTextField();
+        lblProfissao = new javax.swing.JLabel();
+        txtProfissao = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtRenda = new javax.swing.JTextField();
+        lblTelefone1 = new javax.swing.JLabel();
+        txtTelefone = new javax.swing.JTextField();
+        txtTelefone2 = new javax.swing.JLabel();
+        txtCelular = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lblEndereco = new javax.swing.JLabel();
+        txtEndereco = new javax.swing.JTextField();
+        lblNumero = new javax.swing.JLabel();
+        txtNumero = new javax.swing.JTextField();
+        lblComplemento = new javax.swing.JLabel();
+        txtComplemento = new javax.swing.JTextField();
+        lblBairro = new javax.swing.JLabel();
+        txtBairro = new javax.swing.JTextField();
+        lblCidade = new javax.swing.JLabel();
+        txtCidade = new javax.swing.JTextField();
+        lblUF = new javax.swing.JLabel();
+        BoxUF = new javax.swing.JComboBox<>();
+        lblCEP = new javax.swing.JLabel();
+        txtCEP = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        BoxEstadoCivil = new javax.swing.JComboBox<>();
+        lblNomeConjuge = new javax.swing.JLabel();
+        txtNomeConjuge = new javax.swing.JTextField();
+        lblCPFConjuge = new javax.swing.JLabel();
+        txtCPFConjuge = new javax.swing.JTextField();
+        lblDataNascConjuge = new javax.swing.JLabel();
+        txtDataNascConjuge = new javax.swing.JTextField();
+        txtProfissaoConjuge = new javax.swing.JTextField();
+        txtRendaConjuge = new javax.swing.JTextField();
+        lblProfissaoConjuge = new javax.swing.JLabel();
+        lblRendaConjuge = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+        boxLogradouro = new javax.swing.JComboBox<>();
+        btnPesquisar1 = new javax.swing.JButton();
+        btnNovo1 = new javax.swing.JButton();
+        brnEditar1 = new javax.swing.JButton();
+        btnImprimir1 = new javax.swing.JButton();
+        btnCancelar1 = new javax.swing.JButton();
         panelCadImovel = new javax.swing.JPanel();
         panelVendedor = new javax.swing.JPanel();
         lblCPF_Vend1 = new javax.swing.JLabel();
@@ -104,64 +155,13 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         brnEditar = new javax.swing.JButton();
         btnImprimir = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        panelCadPessoa = new javax.swing.JPanel();
-        lblNome = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
-        lblCPF = new javax.swing.JLabel();
-        txtCPF = new javax.swing.JTextField();
-        lblDataNasc = new javax.swing.JLabel();
-        txtDataNasc = new javax.swing.JTextField();
-        lblProfissao = new javax.swing.JLabel();
-        txtProfissao = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtRenda = new javax.swing.JTextField();
-        lblTelefone1 = new javax.swing.JLabel();
-        txtTelefone = new javax.swing.JTextField();
-        txtTelefone2 = new javax.swing.JLabel();
-        txtCelular = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
-        lblEndereco = new javax.swing.JLabel();
-        txtEndereco = new javax.swing.JTextField();
-        lblNumero = new javax.swing.JLabel();
-        txtNumero = new javax.swing.JTextField();
-        lblComplemento = new javax.swing.JLabel();
-        txtComplemento = new javax.swing.JTextField();
-        lblBairro = new javax.swing.JLabel();
-        txtBairro = new javax.swing.JTextField();
-        lblCidade = new javax.swing.JLabel();
-        txtCidade = new javax.swing.JTextField();
-        lblUF = new javax.swing.JLabel();
-        BoxUF = new javax.swing.JComboBox<>();
-        lblCEP = new javax.swing.JLabel();
-        txtCEP = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        BoxEstadoCivil = new javax.swing.JComboBox<>();
-        lblNomeConjuge = new javax.swing.JLabel();
-        txtNomeConjuge = new javax.swing.JTextField();
-        lblCPFConjuge = new javax.swing.JLabel();
-        txtCPFConjuge = new javax.swing.JTextField();
-        lblDataNascConjuge = new javax.swing.JLabel();
-        txtDataNascConjuge = new javax.swing.JTextField();
-        txtProfissaoConjuge = new javax.swing.JTextField();
-        txtRendaConjuge = new javax.swing.JTextField();
-        lblProfissaoConjuge = new javax.swing.JLabel();
-        lblRendaConjuge = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
-        boxLogradouro = new javax.swing.JComboBox<>();
-        btnPesquisar1 = new javax.swing.JButton();
-        btnNovo1 = new javax.swing.JButton();
-        brnEditar1 = new javax.swing.JButton();
-        btnImprimir1 = new javax.swing.JButton();
-        btnCancelar1 = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        setClosable(true);
         setIconifiable(true);
         setTitle("..:Cadastro:..");
         setToolTipText("");
         setMaximumSize(null);
+        setPreferredSize(new java.awt.Dimension(1500, 1000));
         try {
             setSelected(true);
         } catch (java.beans.PropertyVetoException e1) {
@@ -170,6 +170,258 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         jTabbedPane1.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+
+        panelCadPessoa.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Cadastro de Pessoa", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
+        panelCadPessoa.setLayout(null);
+
+        lblNome.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblNome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblNome.setText("Nome:");
+        panelCadPessoa.add(lblNome);
+        lblNome.setBounds(190, 130, 53, 25);
+
+        txtNome.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtNome);
+        txtNome.setBounds(260, 120, 720, 40);
+
+        lblCPF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblCPF.setText("CPF:");
+        panelCadPessoa.add(lblCPF);
+        lblCPF.setBounds(990, 130, 34, 25);
+
+        txtCPF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtCPF);
+        txtCPF.setBounds(1040, 120, 230, 40);
+
+        lblDataNasc.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblDataNasc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblDataNasc.setText("Data de Nascimento:");
+        panelCadPessoa.add(lblDataNasc);
+        lblDataNasc.setBounds(80, 190, 165, 25);
+
+        txtDataNasc.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtDataNasc);
+        txtDataNasc.setBounds(260, 180, 180, 40);
+
+        lblProfissao.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblProfissao.setText("Profissão:");
+        panelCadPessoa.add(lblProfissao);
+        lblProfissao.setBounds(460, 190, 77, 25);
+
+        txtProfissao.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtProfissao);
+        txtProfissao.setBounds(550, 180, 430, 40);
+
+        jLabel2.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jLabel2.setText("Renda Líquida:");
+        panelCadPessoa.add(jLabel2);
+        jLabel2.setBounds(990, 190, 116, 25);
+
+        txtRenda.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtRenda);
+        txtRenda.setBounds(1120, 180, 150, 40);
+
+        lblTelefone1.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblTelefone1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTelefone1.setText("Telefone:");
+        panelCadPessoa.add(lblTelefone1);
+        lblTelefone1.setBounds(180, 250, 71, 25);
+
+        txtTelefone.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtTelefone);
+        txtTelefone.setBounds(260, 240, 165, 40);
+
+        txtTelefone2.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        txtTelefone2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtTelefone2.setText("Celular:");
+        panelCadPessoa.add(txtTelefone2);
+        txtTelefone2.setBounds(440, 250, 60, 25);
+
+        txtCelular.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtCelular);
+        txtCelular.setBounds(510, 240, 165, 40);
+
+        jLabel3.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jLabel3.setText("E-mail:");
+        panelCadPessoa.add(jLabel3);
+        jLabel3.setBounds(690, 250, 53, 25);
+
+        txtEmail.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtEmail);
+        txtEmail.setBounds(750, 240, 520, 40);
+
+        lblEndereco.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblEndereco.setText("Endereço:");
+        panelCadPessoa.add(lblEndereco);
+        lblEndereco.setBounds(420, 310, 80, 25);
+
+        txtEndereco.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtEndereco);
+        txtEndereco.setBounds(500, 300, 310, 40);
+
+        lblNumero.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblNumero.setText("Nº");
+        panelCadPessoa.add(lblNumero);
+        lblNumero.setBounds(820, 310, 21, 25);
+
+        txtNumero.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtNumero);
+        txtNumero.setBounds(850, 300, 60, 40);
+
+        lblComplemento.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblComplemento.setText("Complemento:");
+        panelCadPessoa.add(lblComplemento);
+        lblComplemento.setBounds(920, 310, 118, 25);
+
+        txtComplemento.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtComplemento);
+        txtComplemento.setBounds(1050, 300, 220, 40);
+
+        lblBairro.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblBairro.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblBairro.setText("Bairro:");
+        panelCadPessoa.add(lblBairro);
+        lblBairro.setBounds(200, 370, 50, 25);
+
+        txtBairro.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtBairro);
+        txtBairro.setBounds(260, 360, 310, 40);
+
+        lblCidade.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblCidade.setText("Cidade:");
+        panelCadPessoa.add(lblCidade);
+        lblCidade.setBounds(580, 370, 59, 25);
+
+        txtCidade.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtCidade);
+        txtCidade.setBounds(650, 360, 290, 40);
+
+        lblUF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblUF.setText("UF:");
+        panelCadPessoa.add(lblUF);
+        lblUF.setBounds(950, 370, 25, 25);
+
+        BoxUF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        BoxUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+        panelCadPessoa.add(BoxUF);
+        BoxUF.setBounds(980, 360, 100, 40);
+
+        lblCEP.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblCEP.setText("CEP:");
+        panelCadPessoa.add(lblCEP);
+        lblCEP.setBounds(1090, 370, 34, 25);
+
+        txtCEP.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        panelCadPessoa.add(txtCEP);
+        txtCEP.setBounds(1130, 360, 140, 40);
+
+        jLabel4.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setText("Estado Civil:");
+        panelCadPessoa.add(jLabel4);
+        jLabel4.setBounds(150, 480, 95, 20);
+
+        BoxEstadoCivil.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        BoxEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Casado(a)", "Divorciado(a)", "Separado(a)", "Solteiro(a)", "Viuvo(a)" }));
+        panelCadPessoa.add(BoxEstadoCivil);
+        BoxEstadoCivil.setBounds(260, 470, 170, 40);
+
+        lblNomeConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblNomeConjuge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblNomeConjuge.setText("Nome Cônjuge:");
+        panelCadPessoa.add(lblNomeConjuge);
+        lblNomeConjuge.setBounds(120, 540, 124, 25);
+
+        txtNomeConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        txtNomeConjuge.setEnabled(false);
+        panelCadPessoa.add(txtNomeConjuge);
+        txtNomeConjuge.setBounds(260, 530, 720, 40);
+
+        lblCPFConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblCPFConjuge.setText("CPF:");
+        panelCadPessoa.add(lblCPFConjuge);
+        lblCPFConjuge.setBounds(990, 540, 34, 25);
+
+        txtCPFConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        txtCPFConjuge.setEnabled(false);
+        panelCadPessoa.add(txtCPFConjuge);
+        txtCPFConjuge.setBounds(1040, 530, 230, 40);
+
+        lblDataNascConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblDataNascConjuge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblDataNascConjuge.setText("Data de Nascimento:");
+        panelCadPessoa.add(lblDataNascConjuge);
+        lblDataNascConjuge.setBounds(80, 600, 165, 25);
+
+        txtDataNascConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        txtDataNascConjuge.setEnabled(false);
+        panelCadPessoa.add(txtDataNascConjuge);
+        txtDataNascConjuge.setBounds(260, 590, 180, 40);
+
+        txtProfissaoConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        txtProfissaoConjuge.setEnabled(false);
+        panelCadPessoa.add(txtProfissaoConjuge);
+        txtProfissaoConjuge.setBounds(550, 590, 430, 40);
+
+        txtRendaConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        txtRendaConjuge.setEnabled(false);
+        panelCadPessoa.add(txtRendaConjuge);
+        txtRendaConjuge.setBounds(1120, 590, 150, 40);
+
+        lblProfissaoConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblProfissaoConjuge.setText("Profissão:");
+        panelCadPessoa.add(lblProfissaoConjuge);
+        lblProfissaoConjuge.setBounds(460, 600, 77, 25);
+
+        lblRendaConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lblRendaConjuge.setText("Renda Líquida:");
+        panelCadPessoa.add(lblRendaConjuge);
+        lblRendaConjuge.setBounds(990, 600, 116, 25);
+        panelCadPessoa.add(jSeparator1);
+        jSeparator1.setBounds(90, 430, 1180, 20);
+
+        jLabel7.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel7.setText("Logradouro:");
+        panelCadPessoa.add(jLabel7);
+        jLabel7.setBounds(150, 310, 100, 25);
+
+        boxLogradouro.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        boxLogradouro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RUA", "AVENIDA", "ESTRADA", "RODOVIA" }));
+        panelCadPessoa.add(boxLogradouro);
+        boxLogradouro.setBounds(260, 300, 150, 40);
+
+        btnPesquisar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        btnPesquisar1.setForeground(new java.awt.Color(51, 51, 51));
+        btnPesquisar1.setText("Pesquisar");
+        panelCadPessoa.add(btnPesquisar1);
+        btnPesquisar1.setBounds(110, 820, 175, 70);
+
+        btnNovo1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        btnNovo1.setForeground(new java.awt.Color(51, 51, 51));
+        btnNovo1.setText("Novo");
+        panelCadPessoa.add(btnNovo1);
+        btnNovo1.setBounds(360, 820, 175, 70);
+
+        brnEditar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        brnEditar1.setForeground(new java.awt.Color(51, 51, 51));
+        brnEditar1.setText("Editar");
+        panelCadPessoa.add(brnEditar1);
+        brnEditar1.setBounds(610, 820, 175, 70);
+
+        btnImprimir1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        btnImprimir1.setForeground(new java.awt.Color(51, 51, 51));
+        btnImprimir1.setText("Imprimir");
+        panelCadPessoa.add(btnImprimir1);
+        btnImprimir1.setBounds(850, 820, 175, 70);
+
+        btnCancelar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        btnCancelar1.setForeground(new java.awt.Color(51, 51, 51));
+        btnCancelar1.setText("Cancelar");
+        panelCadPessoa.add(btnCancelar1);
+        btnCancelar1.setBounds(1100, 820, 175, 70);
+
+        jTabbedPane1.addTab("Cliente", panelCadPessoa);
 
         panelCadImovel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Cadastro de Imóvel", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
         panelCadImovel.setLayout(null);
@@ -473,258 +725,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         btnCancelar.setBounds(1090, 830, 175, 70);
 
         jTabbedPane1.addTab("Imóvel", panelCadImovel);
-
-        panelCadPessoa.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Cadastro de Pessoa", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
-        panelCadPessoa.setLayout(null);
-
-        lblNome.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblNome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblNome.setText("Nome:");
-        panelCadPessoa.add(lblNome);
-        lblNome.setBounds(190, 130, 53, 25);
-
-        txtNome.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtNome);
-        txtNome.setBounds(260, 120, 720, 40);
-
-        lblCPF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblCPF.setText("CPF:");
-        panelCadPessoa.add(lblCPF);
-        lblCPF.setBounds(990, 130, 34, 25);
-
-        txtCPF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtCPF);
-        txtCPF.setBounds(1040, 120, 230, 40);
-
-        lblDataNasc.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblDataNasc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblDataNasc.setText("Data de Nascimento:");
-        panelCadPessoa.add(lblDataNasc);
-        lblDataNasc.setBounds(80, 190, 165, 25);
-
-        txtDataNasc.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtDataNasc);
-        txtDataNasc.setBounds(260, 180, 180, 40);
-
-        lblProfissao.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblProfissao.setText("Profissão:");
-        panelCadPessoa.add(lblProfissao);
-        lblProfissao.setBounds(460, 190, 77, 25);
-
-        txtProfissao.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtProfissao);
-        txtProfissao.setBounds(550, 180, 430, 40);
-
-        jLabel2.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel2.setText("Renda Líquida:");
-        panelCadPessoa.add(jLabel2);
-        jLabel2.setBounds(990, 190, 116, 25);
-
-        txtRenda.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtRenda);
-        txtRenda.setBounds(1120, 180, 150, 40);
-
-        lblTelefone1.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblTelefone1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblTelefone1.setText("Telefone:");
-        panelCadPessoa.add(lblTelefone1);
-        lblTelefone1.setBounds(180, 250, 71, 25);
-
-        txtTelefone.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtTelefone);
-        txtTelefone.setBounds(260, 240, 165, 40);
-
-        txtTelefone2.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtTelefone2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        txtTelefone2.setText("Celular:");
-        panelCadPessoa.add(txtTelefone2);
-        txtTelefone2.setBounds(440, 250, 60, 25);
-
-        txtCelular.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtCelular);
-        txtCelular.setBounds(510, 240, 165, 40);
-
-        jLabel3.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel3.setText("E-mail:");
-        panelCadPessoa.add(jLabel3);
-        jLabel3.setBounds(690, 250, 53, 25);
-
-        txtEmail.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtEmail);
-        txtEmail.setBounds(750, 240, 520, 40);
-
-        lblEndereco.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblEndereco.setText("Endereço:");
-        panelCadPessoa.add(lblEndereco);
-        lblEndereco.setBounds(420, 310, 80, 25);
-
-        txtEndereco.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtEndereco);
-        txtEndereco.setBounds(500, 300, 310, 40);
-
-        lblNumero.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblNumero.setText("Nº");
-        panelCadPessoa.add(lblNumero);
-        lblNumero.setBounds(820, 310, 21, 25);
-
-        txtNumero.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtNumero);
-        txtNumero.setBounds(850, 300, 60, 40);
-
-        lblComplemento.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblComplemento.setText("Complemento:");
-        panelCadPessoa.add(lblComplemento);
-        lblComplemento.setBounds(920, 310, 118, 25);
-
-        txtComplemento.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtComplemento);
-        txtComplemento.setBounds(1050, 300, 220, 40);
-
-        lblBairro.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblBairro.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblBairro.setText("Bairro:");
-        panelCadPessoa.add(lblBairro);
-        lblBairro.setBounds(200, 370, 50, 25);
-
-        txtBairro.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtBairro);
-        txtBairro.setBounds(260, 360, 310, 40);
-
-        lblCidade.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblCidade.setText("Cidade:");
-        panelCadPessoa.add(lblCidade);
-        lblCidade.setBounds(580, 370, 59, 25);
-
-        txtCidade.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtCidade);
-        txtCidade.setBounds(650, 360, 290, 40);
-
-        lblUF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblUF.setText("UF:");
-        panelCadPessoa.add(lblUF);
-        lblUF.setBounds(950, 370, 25, 25);
-
-        BoxUF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        BoxUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        panelCadPessoa.add(BoxUF);
-        BoxUF.setBounds(980, 360, 100, 40);
-
-        lblCEP.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblCEP.setText("CEP:");
-        panelCadPessoa.add(lblCEP);
-        lblCEP.setBounds(1090, 370, 34, 25);
-
-        txtCEP.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        panelCadPessoa.add(txtCEP);
-        txtCEP.setBounds(1130, 360, 140, 40);
-
-        jLabel4.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText("Estado Civil:");
-        panelCadPessoa.add(jLabel4);
-        jLabel4.setBounds(150, 480, 95, 20);
-
-        BoxEstadoCivil.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        BoxEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Casado(a)", "Divorciado(a)", "Separado(a)", "Solteiro(a)", "Viuvo(a)" }));
-        panelCadPessoa.add(BoxEstadoCivil);
-        BoxEstadoCivil.setBounds(260, 470, 170, 40);
-
-        lblNomeConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblNomeConjuge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblNomeConjuge.setText("Nome Cônjuge:");
-        panelCadPessoa.add(lblNomeConjuge);
-        lblNomeConjuge.setBounds(120, 540, 124, 25);
-
-        txtNomeConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtNomeConjuge.setEnabled(false);
-        panelCadPessoa.add(txtNomeConjuge);
-        txtNomeConjuge.setBounds(260, 530, 720, 40);
-
-        lblCPFConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblCPFConjuge.setText("CPF:");
-        panelCadPessoa.add(lblCPFConjuge);
-        lblCPFConjuge.setBounds(990, 540, 34, 25);
-
-        txtCPFConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtCPFConjuge.setEnabled(false);
-        panelCadPessoa.add(txtCPFConjuge);
-        txtCPFConjuge.setBounds(1040, 530, 230, 40);
-
-        lblDataNascConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblDataNascConjuge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblDataNascConjuge.setText("Data de Nascimento:");
-        panelCadPessoa.add(lblDataNascConjuge);
-        lblDataNascConjuge.setBounds(80, 600, 165, 25);
-
-        txtDataNascConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtDataNascConjuge.setEnabled(false);
-        panelCadPessoa.add(txtDataNascConjuge);
-        txtDataNascConjuge.setBounds(260, 590, 180, 40);
-
-        txtProfissaoConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtProfissaoConjuge.setEnabled(false);
-        panelCadPessoa.add(txtProfissaoConjuge);
-        txtProfissaoConjuge.setBounds(550, 590, 430, 40);
-
-        txtRendaConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtRendaConjuge.setEnabled(false);
-        panelCadPessoa.add(txtRendaConjuge);
-        txtRendaConjuge.setBounds(1120, 590, 150, 40);
-
-        lblProfissaoConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblProfissaoConjuge.setText("Profissão:");
-        panelCadPessoa.add(lblProfissaoConjuge);
-        lblProfissaoConjuge.setBounds(460, 600, 77, 25);
-
-        lblRendaConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblRendaConjuge.setText("Renda Líquida:");
-        panelCadPessoa.add(lblRendaConjuge);
-        lblRendaConjuge.setBounds(990, 600, 116, 25);
-        panelCadPessoa.add(jSeparator1);
-        jSeparator1.setBounds(90, 430, 1180, 20);
-
-        jLabel7.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("Logradouro:");
-        panelCadPessoa.add(jLabel7);
-        jLabel7.setBounds(150, 310, 100, 25);
-
-        boxLogradouro.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        boxLogradouro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RUA", "AVENIDA", "ESTRADA", "RODOVIA" }));
-        panelCadPessoa.add(boxLogradouro);
-        boxLogradouro.setBounds(260, 300, 150, 40);
-
-        btnPesquisar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        btnPesquisar1.setForeground(new java.awt.Color(51, 51, 51));
-        btnPesquisar1.setText("Pesquisar");
-        panelCadPessoa.add(btnPesquisar1);
-        btnPesquisar1.setBounds(110, 820, 175, 70);
-
-        btnNovo1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        btnNovo1.setForeground(new java.awt.Color(51, 51, 51));
-        btnNovo1.setText("Novo");
-        panelCadPessoa.add(btnNovo1);
-        btnNovo1.setBounds(360, 820, 175, 70);
-
-        brnEditar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        brnEditar1.setForeground(new java.awt.Color(51, 51, 51));
-        brnEditar1.setText("Editar");
-        panelCadPessoa.add(brnEditar1);
-        brnEditar1.setBounds(610, 820, 175, 70);
-
-        btnImprimir1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        btnImprimir1.setForeground(new java.awt.Color(51, 51, 51));
-        btnImprimir1.setText("Imprimir");
-        panelCadPessoa.add(btnImprimir1);
-        btnImprimir1.setBounds(850, 820, 175, 70);
-
-        btnCancelar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        btnCancelar1.setForeground(new java.awt.Color(51, 51, 51));
-        btnCancelar1.setText("Cancelar");
-        panelCadPessoa.add(btnCancelar1);
-        btnCancelar1.setBounds(1100, 820, 175, 70);
-
-        jTabbedPane1.addTab("Cliente", panelCadPessoa);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
