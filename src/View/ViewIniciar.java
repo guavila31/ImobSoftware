@@ -11,6 +11,9 @@ import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialDarker
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialDeepOceanContrastIJTheme;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialOceanicContrastIJTheme;
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 /**
@@ -23,7 +26,11 @@ public class ViewIniciar extends javax.swing.JFrame {
      * Creates new form ViewIniciar
      */
     public ViewIniciar() {
-        initComponents();
+        DialogLogin telaLogin = new DialogLogin(this, true);
+        telaLogin.setVisible(true);
+        if (telaLogin.getAutenticado()) {
+            initComponents();
+        }
     }
 
     /**
@@ -55,6 +62,9 @@ public class ViewIniciar extends javax.swing.JFrame {
         setTitle(".::ImobSoftware::.");
         setBackground(new java.awt.Color(51, 51, 51));
         setExtendedState(6);
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         jPanel1.setBackground(new java.awt.Color(29, 94, 105));
         jPanel1.setToolTipText("");
@@ -196,6 +206,7 @@ public class ViewIniciar extends javax.swing.JFrame {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         // TODO add your handling code here:
         InternalCadastro telaCad = new InternalCadastro().getInstance();
@@ -311,7 +322,7 @@ public class ViewIniciar extends javax.swing.JFrame {
             jDesktopPane1.add(tela);
             tela.setVisible(true);
             try {
-            //    tela.setMaximum(true);
+                //    tela.setMaximum(true);
                 tela.setSelected(true);
             } catch (Exception e2) {
                 e2.printStackTrace();

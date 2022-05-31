@@ -71,9 +71,14 @@ public class InternalContrato extends javax.swing.JInternalFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        setClosable(true);
         setIconifiable(true);
         setTitle("..:Contrato:..");
-        setPreferredSize(new java.awt.Dimension(1500, 1000));
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/contrato_1.png"))); // NOI18N
+        setMaximumSize(new java.awt.Dimension(1500, 900));
+        setMinimumSize(new java.awt.Dimension(1500, 900));
+        setPreferredSize(new java.awt.Dimension(1500, 900));
+        setRequestFocusEnabled(false);
         getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -139,7 +144,7 @@ public class InternalContrato extends javax.swing.JInternalFrame {
         jTextField6.setBounds(290, 260, 160, 30);
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(80, 70, 570, 310);
+        jPanel3.setBounds(80, 50, 570, 310);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pesquisar Contratos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 24), new java.awt.Color(243, 225, 182))); // NOI18N
         jPanel4.setLayout(null);
@@ -183,20 +188,20 @@ public class InternalContrato extends javax.swing.JInternalFrame {
         jScrollPane1.setBounds(30, 90, 510, 270);
 
         jPanel1.add(jPanel4);
-        jPanel4.setBounds(80, 410, 570, 380);
+        jPanel4.setBounds(80, 380, 570, 380);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(60, 50, 730, 810);
+        jPanel1.setBounds(60, 50, 730, 780);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(null);
 
         jDesktopPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.add(jDesktopPane1);
-        jDesktopPane1.setBounds(0, 0, 570, 810);
+        jDesktopPane1.setBounds(0, 0, 570, 780);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(830, 50, 570, 810);
+        jPanel2.setBounds(830, 50, 570, 780);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -157,11 +157,13 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         btnCancelar = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setClosable(true);
         setIconifiable(true);
         setTitle("..:Cadastro:..");
         setToolTipText("");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/local-na-rede-internet (2).png"))); // NOI18N
         setMaximumSize(null);
-        setPreferredSize(new java.awt.Dimension(1500, 1000));
+        setPreferredSize(new java.awt.Dimension(1500, 900));
         try {
             setSelected(true);
         } catch (java.beans.PropertyVetoException e1) {
@@ -395,31 +397,31 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         btnPesquisar1.setForeground(new java.awt.Color(51, 51, 51));
         btnPesquisar1.setText("Pesquisar");
         panelCadPessoa.add(btnPesquisar1);
-        btnPesquisar1.setBounds(110, 820, 175, 70);
+        btnPesquisar1.setBounds(100, 680, 175, 70);
 
         btnNovo1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnNovo1.setForeground(new java.awt.Color(51, 51, 51));
         btnNovo1.setText("Novo");
         panelCadPessoa.add(btnNovo1);
-        btnNovo1.setBounds(360, 820, 175, 70);
+        btnNovo1.setBounds(340, 680, 175, 70);
 
         brnEditar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         brnEditar1.setForeground(new java.awt.Color(51, 51, 51));
         brnEditar1.setText("Editar");
         panelCadPessoa.add(brnEditar1);
-        brnEditar1.setBounds(610, 820, 175, 70);
+        brnEditar1.setBounds(580, 680, 175, 70);
 
         btnImprimir1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnImprimir1.setForeground(new java.awt.Color(51, 51, 51));
         btnImprimir1.setText("Imprimir");
         panelCadPessoa.add(btnImprimir1);
-        btnImprimir1.setBounds(850, 820, 175, 70);
+        btnImprimir1.setBounds(840, 680, 175, 70);
 
         btnCancelar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnCancelar1.setForeground(new java.awt.Color(51, 51, 51));
         btnCancelar1.setText("Cancelar");
         panelCadPessoa.add(btnCancelar1);
-        btnCancelar1.setBounds(1100, 820, 175, 70);
+        btnCancelar1.setBounds(1090, 680, 175, 70);
 
         jTabbedPane1.addTab("Cliente", panelCadPessoa);
 
@@ -606,7 +608,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         txtCelVendConj.setBounds(1020, 360, 220, 40);
 
         panelCadImovel.add(panelVendedor);
-        panelVendedor.setBounds(20, 380, 1340, 440);
+        panelVendedor.setBounds(20, 290, 1340, 440);
 
         panelImovel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 153, 142)), "Dados do Imóvel", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 24), new java.awt.Color(243, 225, 182))); // NOI18N
         panelImovel.setLayout(null);
@@ -615,25 +617,25 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("Logradouro:");
         panelImovel.add(jLabel8);
-        jLabel8.setBounds(50, 100, 100, 25);
+        jLabel8.setBounds(50, 70, 100, 25);
 
         boxLogradouroImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         boxLogradouroImovel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RUA", "AVENIDA", "ESTRADA", "RODOVIA" }));
         panelImovel.add(boxLogradouroImovel);
-        boxLogradouroImovel.setBounds(160, 90, 150, 40);
+        boxLogradouroImovel.setBounds(160, 60, 150, 40);
 
         txtCompImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelImovel.add(txtCompImovel);
-        txtCompImovel.setBounds(1030, 90, 260, 40);
+        txtCompImovel.setBounds(1030, 60, 260, 40);
 
         txtCEP_Imovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelImovel.add(txtCEP_Imovel);
-        txtCEP_Imovel.setBounds(1100, 170, 190, 40);
+        txtCEP_Imovel.setBounds(1100, 140, 190, 40);
 
         boxImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         boxImovel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         panelImovel.add(boxImovel);
-        boxImovel.setBounds(920, 170, 100, 40);
+        boxImovel.setBounds(920, 140, 100, 40);
 
         txtNumeroImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         txtNumeroImovel.addActionListener(new java.awt.event.ActionListener() {
@@ -642,87 +644,87 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
             }
         });
         panelImovel.add(txtNumeroImovel);
-        txtNumeroImovel.setBounds(810, 90, 60, 40);
+        txtNumeroImovel.setBounds(810, 60, 60, 40);
 
         lblUFImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblUFImovel.setText("UF:");
         panelImovel.add(lblUFImovel);
-        lblUFImovel.setBounds(880, 180, 25, 25);
+        lblUFImovel.setBounds(880, 150, 25, 25);
 
         lblNumeroImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblNumeroImovel.setText("Nº:");
         panelImovel.add(lblNumeroImovel);
-        lblNumeroImovel.setBounds(770, 100, 25, 25);
+        lblNumeroImovel.setBounds(770, 70, 25, 25);
 
         lblCEPImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblCEPImovel.setText("CEP:");
         panelImovel.add(lblCEPImovel);
-        lblCEPImovel.setBounds(1050, 180, 34, 25);
+        lblCEPImovel.setBounds(1050, 150, 34, 25);
 
         lblComplImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblComplImovel.setText("Complemento:");
         panelImovel.add(lblComplImovel);
-        lblComplImovel.setBounds(900, 100, 118, 25);
+        lblComplImovel.setBounds(900, 70, 118, 25);
 
         txtBairroImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelImovel.add(txtBairroImovel);
-        txtBairroImovel.setBounds(150, 170, 310, 40);
+        txtBairroImovel.setBounds(150, 140, 310, 40);
 
         lblBairroImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblBairroImovel.setText("Bairro:");
         panelImovel.add(lblBairroImovel);
-        lblBairroImovel.setBounds(80, 180, 50, 25);
+        lblBairroImovel.setBounds(80, 150, 50, 25);
 
         lblCidadeImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblCidadeImovel.setText("Cidade:");
         panelImovel.add(lblCidadeImovel);
-        lblCidadeImovel.setBounds(490, 180, 59, 25);
+        lblCidadeImovel.setBounds(490, 150, 59, 25);
 
         txtCidadeImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelImovel.add(txtCidadeImovel);
-        txtCidadeImovel.setBounds(560, 170, 290, 40);
+        txtCidadeImovel.setBounds(560, 140, 290, 40);
 
         lblEnderecoImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblEnderecoImovel.setText("Endereço:");
         panelImovel.add(lblEnderecoImovel);
-        lblEnderecoImovel.setBounds(340, 100, 77, 25);
+        lblEnderecoImovel.setBounds(340, 70, 77, 25);
 
         txtEnderecoImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelImovel.add(txtEnderecoImovel);
-        txtEnderecoImovel.setBounds(430, 90, 310, 40);
+        txtEnderecoImovel.setBounds(430, 60, 310, 40);
 
         panelCadImovel.add(panelImovel);
-        panelImovel.setBounds(20, 70, 1340, 280);
+        panelImovel.setBounds(20, 50, 1340, 220);
 
         btnPesquisar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnPesquisar.setForeground(new java.awt.Color(51, 51, 51));
         btnPesquisar.setText("Pesquisar");
         panelCadImovel.add(btnPesquisar);
-        btnPesquisar.setBounds(110, 830, 175, 70);
+        btnPesquisar.setBounds(110, 760, 175, 70);
 
         btnNovo.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnNovo.setForeground(new java.awt.Color(51, 51, 51));
         btnNovo.setText("Novo");
         panelCadImovel.add(btnNovo);
-        btnNovo.setBounds(360, 830, 175, 70);
+        btnNovo.setBounds(360, 760, 175, 70);
 
         brnEditar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         brnEditar.setForeground(new java.awt.Color(51, 51, 51));
         brnEditar.setText("Editar");
         panelCadImovel.add(brnEditar);
-        brnEditar.setBounds(610, 830, 175, 70);
+        brnEditar.setBounds(610, 760, 175, 70);
 
         btnImprimir.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnImprimir.setForeground(new java.awt.Color(51, 51, 51));
         btnImprimir.setText("Imprimir");
         panelCadImovel.add(btnImprimir);
-        btnImprimir.setBounds(850, 830, 175, 70);
+        btnImprimir.setBounds(850, 760, 175, 70);
 
         btnCancelar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(51, 51, 51));
         btnCancelar.setText("Cancelar");
         panelCadImovel.add(btnCancelar);
-        btnCancelar.setBounds(1090, 830, 175, 70);
+        btnCancelar.setBounds(1090, 760, 175, 70);
 
         jTabbedPane1.addTab("Imóvel", panelCadImovel);
 
@@ -739,7 +741,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 931, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 939, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

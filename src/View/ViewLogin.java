@@ -6,7 +6,11 @@ package View;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialOceanicContrastIJTheme;
+import dao.UsuarioDAO;
 import java.awt.Color;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -15,13 +19,30 @@ import javax.swing.UIManager;
  */
 public class ViewLogin extends javax.swing.JFrame {
 
+    private boolean autenticado;
+    private UsuarioDAO usuarioDAO;
+
+    public boolean getAutenticado() {
+        return autenticado;
+    }
+
     /**
      * Creates new form ViewLogin
      */
     public ViewLogin() {
         initComponents();
-        this.btnCancelarLog.setBackground(Color.decode("#fa3419"));
-        this.btnCancelarLog.setForeground(Color.decode("#f3e1b6"));
+        this.btnCancelar.setBackground(Color.decode("#fa3419"));
+        this.btnCancelar.setForeground(Color.decode("#f3e1b6"));
+        usuarioDAO = new UsuarioDAO();
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if (!autenticado) {
+                    System.exit(0);
+                }
+            }
+        });
+
     }
 
     /**
@@ -35,12 +56,12 @@ public class ViewLogin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        btnCancelarLog = new javax.swing.JButton();
+        btnEntrar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
+        txtSenha = new javax.swing.JPasswordField();
+        txtLogin = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(750, 500));
@@ -58,17 +79,27 @@ public class ViewLogin extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(50, 80, 300, 300);
 
-        jButton1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(243, 225, 182));
-        jButton1.setText("Entrar");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(370, 315, 150, 50);
+        btnEntrar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        btnEntrar.setForeground(new java.awt.Color(243, 225, 182));
+        btnEntrar.setText("Entrar");
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEntrar);
+        btnEntrar.setBounds(370, 315, 150, 50);
 
-        btnCancelarLog.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        btnCancelarLog.setForeground(new java.awt.Color(243, 225, 182));
-        btnCancelarLog.setText("Cancelar");
-        getContentPane().add(btnCancelarLog);
-        btnCancelarLog.setBounds(563, 315, 150, 50);
+        btnCancelar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(243, 225, 182));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCancelar);
+        btnCancelar.setBounds(563, 315, 150, 50);
 
         jLabel1.setBackground(new java.awt.Color(243, 225, 182));
         jLabel1.setFont(new java.awt.Font("Nirmala UI", 0, 24)); // NOI18N
@@ -84,26 +115,43 @@ public class ViewLogin extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(370, 190, 66, 32);
 
-        jPasswordField1.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 16)); // NOI18N
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        txtSenha.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 16)); // NOI18N
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                txtSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(370, 230, 343, 40);
+        getContentPane().add(txtSenha);
+        txtSenha.setBounds(370, 230, 343, 40);
 
-        jTextField1.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 16)); // NOI18N
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(370, 120, 343, 40);
+        txtLogin.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 16)); // NOI18N
+        getContentPane().add(txtLogin);
+        txtLogin.setBounds(370, 120, 343, 40);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_txtSenhaActionPerformed
+
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        // TODO add your handling code here:
+
+        if (usuarioDAO.autenticar(txtLogin.getText(), txtSenha.getText())) {
+            autenticado = true;
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuario e senha invalido", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
+            autenticado = false;
+        }
+    }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,13 +170,17 @@ public class ViewLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewLogin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewLogin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewLogin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewLogin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         FlatLightLaf.setup(new FlatMaterialOceanicContrastIJTheme());
@@ -137,23 +189,29 @@ public class ViewLogin extends javax.swing.JFrame {
         UIManager.put("PasswordField.showRevealButton", true);
         UIManager.put("Button.background", Color.decode("#7cbc9a"));
 
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewLogin().setVisible(true);
+                ViewLogin login = new ViewLogin();
+                login.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                login.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelarLog;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnEntrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtLogin;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }

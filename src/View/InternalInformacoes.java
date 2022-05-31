@@ -4,15 +4,65 @@
  */
 package View;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
+import java.awt.event.*;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author gusta
  */
 public class InternalInformacoes extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form InternalInformacoes
-     */
+    public class BGDesktopPane extends JFrame {
+        /*
+        private static Image img;
+        private JDesktopPane dp1;
+
+        public BGDesktopPane() {
+            try {
+                img = javax.imageio.ImageIO.read(new java.net.URL(getClass().getResource("Imob_500px.png"), "Imob_500px.png"));
+            } catch (Exception e) {
+            }
+
+            dp1 = new JDesktopPane() {
+                public void paintComponent(Graphics g) {
+                    super.paintComponent(g);
+                    if (img != null) {
+                        g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
+                        g.drawString("Background Carregado com Sucesso!!!", (this.getWidth() / 2), (this.getHeight() / 2));
+                    } else {
+                        g.drawString("Image not found", 50, 50);
+                    }
+                    // O repaint e o VAlidade aparentimente n fazem diferença. Caso encontrem algum bom motivo para usa-los, postem, please! xD
+                    //super.repaint();
+                    //super.validate();
+                }
+            };
+            addWindowListener(new WindowAdapter() {
+
+                public void windowOpened(WindowEvent evt) {
+                    formWindowOpened(evt);
+                }
+
+                private void formWindowOpened(WindowEvent evt) {
+                    throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                }
+            }
+            );
+        }
+    
+         */
+//apagar ate aqui
+    }
+
+
     private static InternalInformacoes instance;
 
     public static InternalInformacoes getInstance() {
@@ -41,11 +91,13 @@ public class InternalInformacoes extends javax.swing.JInternalFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jSeparator1 = new javax.swing.JSeparator();
 
+        setClosable(true);
         setIconifiable(true);
         setTitle("..:Informações:..");
-        setMaximumSize(new java.awt.Dimension(1440, 884));
-        setMinimumSize(new java.awt.Dimension(1440, 884));
-        setPreferredSize(new java.awt.Dimension(1500, 1000));
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/botao-de-informacao.png"))); // NOI18N
+        setMaximumSize(new java.awt.Dimension(1500, 900));
+        setMinimumSize(new java.awt.Dimension(1500, 900));
+        setPreferredSize(new java.awt.Dimension(1500, 900));
 
         jTree1.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 24)); // NOI18N
         jTree1.setForeground(new java.awt.Color(243, 225, 182));

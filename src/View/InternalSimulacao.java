@@ -89,14 +89,18 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         btnNovo = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setClosable(true);
         setIconifiable(true);
         setTitle("..:Simulação:..");
         setToolTipText("");
-        setMaximumSize(new java.awt.Dimension(1440, 884));
-        setMinimumSize(new java.awt.Dimension(1440, 884));
+        setAutoscrolls(true);
+        setEnabled(false);
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/pagamento-em-dinheiro.png"))); // NOI18N
+        setMaximumSize(new java.awt.Dimension(1500, 900));
+        setMinimumSize(new java.awt.Dimension(1500, 9004));
         setName(""); // NOI18N
         setNormalBounds(new java.awt.Rectangle(0, 0, 75, 0));
-        setPreferredSize(new java.awt.Dimension(1500, 1000));
+        setPreferredSize(new java.awt.Dimension(1500, 900));
         getContentPane().setLayout(null);
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
@@ -165,7 +169,7 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         cbxConj.setBounds(16, 250, 190, 30);
 
         jPanel5.add(jPanel4);
-        jPanel4.setBounds(60, 50, 450, 325);
+        jPanel4.setBounds(60, 40, 450, 325);
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 153, 142), 1, true), "Conjugue", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 18), new java.awt.Color(243, 225, 182))); // NOI18N
         jPanel6.setLayout(null);
@@ -215,15 +219,15 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         txtNomeConj.setBounds(180, 60, 250, 35);
 
         jPanel5.add(jPanel6);
-        jPanel6.setBounds(654, 50, 450, 325);
+        jPanel6.setBounds(660, 40, 450, 325);
 
         jSeparator1.setForeground(new java.awt.Color(35, 153, 142));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel5.add(jSeparator1);
-        jSeparator1.setBounds(583, 55, 20, 325);
+        jSeparator1.setBounds(580, 55, 20, 310);
 
         getContentPane().add(jPanel5);
-        jPanel5.setBounds(30, 20, 1160, 400);
+        jPanel5.setBounds(170, 10, 1160, 400);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 30))); // NOI18N
         jPanel1.setLayout(null);
@@ -236,44 +240,44 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         jSeparator3.setForeground(new java.awt.Color(35, 153, 142));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel2.add(jSeparator3);
-        jSeparator3.setBounds(580, 65, 12, 320);
+        jSeparator3.setBounds(580, 65, 12, 220);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 153, 142)), "Pessoa", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 20), new java.awt.Color(243, 225, 182))); // NOI18N
         jPanel3.setLayout(null);
 
         txtValorTotal.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jPanel3.add(txtValorTotal);
-        txtValorTotal.setBounds(180, 90, 250, 35);
+        txtValorTotal.setBounds(180, 40, 250, 35);
 
         txtParcelas.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jPanel3.add(txtParcelas);
-        txtParcelas.setBounds(180, 150, 250, 35);
+        txtParcelas.setBounds(180, 100, 250, 35);
 
         jLabel19.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel19.setText("Pagamento mensal");
         jPanel3.add(jLabel19);
-        jLabel19.setBounds(15, 220, 160, 30);
+        jLabel19.setBounds(10, 170, 160, 30);
 
         txtPagMensal.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         txtPagMensal.setEnabled(false);
         jPanel3.add(txtPagMensal);
-        txtPagMensal.setBounds(180, 215, 250, 35);
+        txtPagMensal.setBounds(180, 170, 250, 35);
 
         jLabel17.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel17.setText("Valor Total");
         jPanel3.add(jLabel17);
-        jLabel17.setBounds(15, 95, 160, 30);
+        jLabel17.setBounds(10, 50, 160, 30);
 
         jLabel18.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel18.setText("Parcelas");
         jPanel3.add(jLabel18);
-        jLabel18.setBounds(15, 155, 160, 30);
+        jLabel18.setBounds(10, 110, 160, 30);
 
         jPanel2.add(jPanel3);
-        jPanel3.setBounds(640, 60, 450, 325);
+        jPanel3.setBounds(640, 40, 450, 240);
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 153, 142)), "Pessoa", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 20), new java.awt.Color(243, 225, 182))); // NOI18N
         jPanel7.setLayout(null);
@@ -281,71 +285,71 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         txtValorFinanc.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         txtValorFinanc.setEnabled(false);
         jPanel7.add(txtValorFinanc);
-        txtValorFinanc.setBounds(180, 220, 250, 35);
+        txtValorFinanc.setBounds(180, 170, 250, 35);
 
         jLabel15.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("Valor Financiado");
         jPanel7.add(jLabel15);
-        jLabel15.setBounds(10, 225, 160, 30);
+        jLabel15.setBounds(10, 170, 160, 30);
 
         jLabel14.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel14.setText("Valor da Entrada");
         jPanel7.add(jLabel14);
-        jLabel14.setBounds(10, 165, 160, 30);
+        jLabel14.setBounds(10, 110, 160, 30);
 
         txtValorEntrada.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jPanel7.add(txtValorEntrada);
-        txtValorEntrada.setBounds(180, 160, 250, 35);
+        txtValorEntrada.setBounds(180, 110, 250, 35);
 
         txtValorImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jPanel7.add(txtValorImovel);
-        txtValorImovel.setBounds(180, 100, 250, 35);
+        txtValorImovel.setBounds(180, 50, 250, 35);
 
         jLabel13.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Valor Imóvel");
         jPanel7.add(jLabel13);
-        jLabel13.setBounds(10, 105, 160, 30);
+        jLabel13.setBounds(10, 50, 160, 30);
 
         jPanel2.add(jPanel7);
-        jPanel7.setBounds(70, 60, 450, 325);
+        jPanel7.setBounds(70, 40, 450, 240);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(30, 440, 1160, 400);
+        jPanel2.setBounds(170, 420, 1160, 320);
 
         brnEditar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         brnEditar.setForeground(new java.awt.Color(51, 51, 51));
         brnEditar.setText("Editar");
         getContentPane().add(brnEditar);
-        brnEditar.setBounds(460, 860, 175, 70);
+        brnEditar.setBounds(670, 760, 175, 70);
 
         btnPesquisar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnPesquisar.setForeground(new java.awt.Color(51, 51, 51));
         btnPesquisar.setText("Pesquisar");
         getContentPane().add(btnPesquisar);
-        btnPesquisar.setBounds(20, 860, 175, 70);
+        btnPesquisar.setBounds(230, 760, 175, 70);
 
         btnImprimir.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnImprimir.setForeground(new java.awt.Color(51, 51, 51));
         btnImprimir.setText("Imprimir");
         getContentPane().add(btnImprimir);
-        btnImprimir.setBounds(670, 860, 175, 70);
+        btnImprimir.setBounds(880, 760, 175, 70);
 
         btnCancelar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(51, 51, 51));
         btnCancelar.setText("Cancelar");
         getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(880, 860, 175, 70);
+        btnCancelar.setBounds(1090, 760, 175, 70);
 
         btnNovo.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnNovo.setForeground(new java.awt.Color(51, 51, 51));
         btnNovo.setText("Novo");
         getContentPane().add(btnNovo);
-        btnNovo.setBounds(240, 860, 175, 70);
+        btnNovo.setBounds(450, 760, 175, 70);
 
-        setBounds(0, 0, 1231, 984);
+        setBounds(0, 0, 1358, 984);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbxConjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxConjActionPerformed
