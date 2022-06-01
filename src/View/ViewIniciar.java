@@ -14,6 +14,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JInternalFrame;
 import javax.swing.UIManager;
 
 /**
@@ -209,6 +210,9 @@ public class ViewIniciar extends javax.swing.JFrame {
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         // TODO add your handling code here:
+         for (JInternalFrame f : jDesktopPane1.getAllFrames()) {
+            f.dispose();
+        }
         InternalCadastro telaCad = new InternalCadastro().getInstance();
         telaCad.pack();
         if (!telaCad.isVisible()) {
@@ -233,6 +237,9 @@ public class ViewIniciar extends javax.swing.JFrame {
 
     private void btnSimulacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimulacaoActionPerformed
         // TODO add your handling code here:
+        for (JInternalFrame f : jDesktopPane1.getAllFrames()) {
+            f.dispose();
+        }
         InternalSimulacao tela = new InternalSimulacao().getInstance();
         tela.pack();
         if (!tela.isVisible()) {
@@ -259,6 +266,9 @@ public class ViewIniciar extends javax.swing.JFrame {
 
     private void btnContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratoActionPerformed
         // TODO add your handling code here:
+        for (JInternalFrame f : jDesktopPane1.getAllFrames()) {
+            f.dispose();
+        }
         InternalContrato tela = new InternalContrato().getInstance();
         tela.pack();
         if (!tela.isVisible()) {
@@ -285,6 +295,9 @@ public class ViewIniciar extends javax.swing.JFrame {
 
     private void btnInformacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformacoesActionPerformed
         // TODO add your handling code here:
+          for (JInternalFrame f : jDesktopPane1.getAllFrames()) {
+            f.dispose();
+        }
         InternalInformacoes tela = new InternalInformacoes().getInstance();
         tela.pack();
         if (!tela.isVisible()) {
@@ -316,6 +329,10 @@ public class ViewIniciar extends javax.swing.JFrame {
 
     private void btnRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioActionPerformed
         // TODO add your handling code here:
+         for (JInternalFrame f : jDesktopPane1.getAllFrames()) {
+            f.dispose();
+        }
+
         InternalRelatorio tela = new InternalRelatorio().getInstance();
         tela.pack();
         if (!tela.isVisible()) {
@@ -342,12 +359,17 @@ public class ViewIniciar extends javax.swing.JFrame {
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         // TODO add your handling code here:
+        for (JInternalFrame f : jDesktopPane1.getAllFrames()) {
+            f.dispose();
+        }
         this.btnMenu.setBackground(Color.decode("#fa3419"));
         this.btnCadastro.setBackground(Color.decode("#f3e1b6"));
         this.btnSimulacao.setBackground(Color.decode("#f3e1b6"));
         this.btnContrato.setBackground(Color.decode("#f3e1b6"));
         this.btnInformacoes.setBackground(Color.decode("#f3e1b6"));
         this.btnRelatorio.setBackground(Color.decode("#f3e1b6"));
+
+
     }//GEN-LAST:event_btnMenuActionPerformed
 
     /**

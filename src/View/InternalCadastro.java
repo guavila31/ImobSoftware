@@ -22,6 +22,8 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         return instance;
     }
 
+   
+
     /**
      * Creates new form InternalCadastro
      */
