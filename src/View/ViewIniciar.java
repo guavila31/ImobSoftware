@@ -63,9 +63,9 @@ public class ViewIniciar extends javax.swing.JFrame {
         setTitle(".::ImobSoftware::.");
         setBackground(new java.awt.Color(51, 51, 51));
         setExtendedState(6);
-        setMaximumSize(new java.awt.Dimension(1920, 1080));
-        setMinimumSize(new java.awt.Dimension(1920, 1080));
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        setMaximumSize(new java.awt.Dimension(1440, 850));
+        setMinimumSize(new java.awt.Dimension(1440, 850));
+        setPreferredSize(new java.awt.Dimension(1440, 850));
 
         jPanel1.setBackground(new java.awt.Color(29, 94, 105));
         jPanel1.setToolTipText("");
@@ -76,13 +76,13 @@ public class ViewIniciar extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("USUÁRIO");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(12, 61, 321, 31);
+        jLabel2.setBounds(40, 40, 321, 31);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/LogoSemFundo.png"))); // NOI18N
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(90, 110, 187, 200);
+        jLabel3.setBounds(110, 80, 187, 200);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/LogoSDC.png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -97,7 +97,7 @@ public class ViewIniciar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSimulacao);
-        btnSimulacao.setBounds(50, 530, 285, 50);
+        btnSimulacao.setBounds(50, 460, 285, 50);
 
         btnContrato.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
         btnContrato.setForeground(new java.awt.Color(51, 51, 51));
@@ -108,7 +108,7 @@ public class ViewIniciar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnContrato);
-        btnContrato.setBounds(50, 610, 285, 50);
+        btnContrato.setBounds(50, 540, 285, 50);
 
         btnRelatorio.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
         btnRelatorio.setForeground(new java.awt.Color(51, 51, 51));
@@ -119,7 +119,7 @@ public class ViewIniciar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRelatorio);
-        btnRelatorio.setBounds(50, 690, 285, 50);
+        btnRelatorio.setBounds(50, 620, 285, 50);
 
         btnInformacoes.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
         btnInformacoes.setForeground(new java.awt.Color(51, 51, 51));
@@ -130,7 +130,7 @@ public class ViewIniciar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnInformacoes);
-        btnInformacoes.setBounds(50, 770, 285, 50);
+        btnInformacoes.setBounds(50, 700, 285, 50);
 
         btnMenu.setBackground(new java.awt.Color(250, 52, 25));
         btnMenu.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
@@ -142,7 +142,7 @@ public class ViewIniciar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnMenu);
-        btnMenu.setBounds(50, 370, 285, 50);
+        btnMenu.setBounds(50, 300, 285, 50);
 
         btnCadastro.setFont(new java.awt.Font("Nirmala UI", 1, 22)); // NOI18N
         btnCadastro.setForeground(new java.awt.Color(51, 51, 51));
@@ -154,28 +154,13 @@ public class ViewIniciar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCadastro);
-        btnCadastro.setBounds(50, 450, 285, 50);
+        btnCadastro.setBounds(50, 380, 285, 50);
+
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(1500, 1051));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Imob_500px.png"))); // NOI18N
-
-        jDesktopPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(539, 539, 539)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1461, 1461, 1461))
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addGap(538, 538, 538))
-        );
+        jDesktopPane1.add(jLabel4);
+        jLabel4.setBounds(360, 40, 500, 500);
 
         jMenuBar1.setRequestFocusEnabled(false);
 
@@ -203,7 +188,7 @@ public class ViewIniciar extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

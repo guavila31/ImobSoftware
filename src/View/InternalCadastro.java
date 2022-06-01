@@ -186,7 +186,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtNome.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtNome);
-        txtNome.setBounds(260, 120, 720, 40);
+        txtNome.setBounds(260, 120, 720, 30);
 
         lblCPF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblCPF.setText("CPF:");
@@ -195,7 +195,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtCPF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtCPF);
-        txtCPF.setBounds(1040, 120, 230, 40);
+        txtCPF.setBounds(1040, 120, 230, 30);
 
         lblDataNasc.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblDataNasc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -205,7 +205,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtDataNasc.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtDataNasc);
-        txtDataNasc.setBounds(260, 180, 180, 40);
+        txtDataNasc.setBounds(260, 180, 180, 30);
 
         lblProfissao.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblProfissao.setText("Profissão:");
@@ -214,7 +214,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtProfissao.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtProfissao);
-        txtProfissao.setBounds(550, 180, 430, 40);
+        txtProfissao.setBounds(550, 180, 430, 30);
 
         jLabel2.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jLabel2.setText("Renda Líquida:");
@@ -223,7 +223,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtRenda.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtRenda);
-        txtRenda.setBounds(1120, 180, 150, 40);
+        txtRenda.setBounds(1120, 180, 150, 30);
 
         lblTelefone1.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblTelefone1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -233,7 +233,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtTelefone.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtTelefone);
-        txtTelefone.setBounds(260, 240, 165, 40);
+        txtTelefone.setBounds(260, 240, 165, 30);
 
         txtTelefone2.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         txtTelefone2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -243,7 +243,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtCelular.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtCelular);
-        txtCelular.setBounds(510, 240, 165, 40);
+        txtCelular.setBounds(510, 240, 165, 30);
 
         jLabel3.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jLabel3.setText("E-mail:");
@@ -252,7 +252,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtEmail.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtEmail);
-        txtEmail.setBounds(750, 240, 520, 40);
+        txtEmail.setBounds(750, 240, 520, 30);
 
         lblEndereco.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblEndereco.setText("Endereço:");
@@ -261,7 +261,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtEndereco.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtEndereco);
-        txtEndereco.setBounds(500, 300, 310, 40);
+        txtEndereco.setBounds(500, 300, 310, 30);
 
         lblNumero.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblNumero.setText("Nº");
@@ -270,7 +270,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtNumero.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtNumero);
-        txtNumero.setBounds(850, 300, 60, 40);
+        txtNumero.setBounds(850, 300, 60, 30);
 
         lblComplemento.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblComplemento.setText("Complemento:");
@@ -279,7 +279,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtComplemento.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtComplemento);
-        txtComplemento.setBounds(1050, 300, 220, 40);
+        txtComplemento.setBounds(1050, 300, 220, 30);
 
         lblBairro.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblBairro.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -289,7 +289,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtBairro.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtBairro);
-        txtBairro.setBounds(260, 360, 310, 40);
+        txtBairro.setBounds(260, 360, 310, 30);
 
         lblCidade.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblCidade.setText("Cidade:");
@@ -298,7 +298,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtCidade.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtCidade);
-        txtCidade.setBounds(650, 360, 290, 40);
+        txtCidade.setBounds(650, 360, 290, 30);
 
         lblUF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblUF.setText("UF:");
@@ -308,7 +308,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         BoxUF.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         BoxUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         panelCadPessoa.add(BoxUF);
-        BoxUF.setBounds(980, 360, 100, 40);
+        BoxUF.setBounds(980, 360, 100, 30);
 
         lblCEP.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblCEP.setText("CEP:");
@@ -317,7 +317,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         txtCEP.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelCadPessoa.add(txtCEP);
-        txtCEP.setBounds(1130, 360, 140, 40);
+        txtCEP.setBounds(1130, 360, 140, 30);
 
         jLabel4.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -328,7 +328,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         BoxEstadoCivil.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         BoxEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Casado(a)", "Divorciado(a)", "Separado(a)", "Solteiro(a)", "Viuvo(a)" }));
         panelCadPessoa.add(BoxEstadoCivil);
-        BoxEstadoCivil.setBounds(260, 470, 170, 40);
+        BoxEstadoCivil.setBounds(260, 470, 170, 30);
 
         lblNomeConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblNomeConjuge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -339,7 +339,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         txtNomeConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         txtNomeConjuge.setEnabled(false);
         panelCadPessoa.add(txtNomeConjuge);
-        txtNomeConjuge.setBounds(260, 530, 720, 40);
+        txtNomeConjuge.setBounds(260, 530, 720, 30);
 
         lblCPFConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblCPFConjuge.setText("CPF:");
@@ -349,7 +349,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         txtCPFConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         txtCPFConjuge.setEnabled(false);
         panelCadPessoa.add(txtCPFConjuge);
-        txtCPFConjuge.setBounds(1040, 530, 230, 40);
+        txtCPFConjuge.setBounds(1040, 530, 230, 30);
 
         lblDataNascConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblDataNascConjuge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -360,17 +360,17 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         txtDataNascConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         txtDataNascConjuge.setEnabled(false);
         panelCadPessoa.add(txtDataNascConjuge);
-        txtDataNascConjuge.setBounds(260, 590, 180, 40);
+        txtDataNascConjuge.setBounds(260, 590, 180, 30);
 
         txtProfissaoConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         txtProfissaoConjuge.setEnabled(false);
         panelCadPessoa.add(txtProfissaoConjuge);
-        txtProfissaoConjuge.setBounds(550, 590, 430, 40);
+        txtProfissaoConjuge.setBounds(550, 590, 430, 30);
 
         txtRendaConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         txtRendaConjuge.setEnabled(false);
         panelCadPessoa.add(txtRendaConjuge);
-        txtRendaConjuge.setBounds(1120, 590, 150, 40);
+        txtRendaConjuge.setBounds(1120, 590, 150, 30);
 
         lblProfissaoConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblProfissaoConjuge.setText("Profissão:");
@@ -743,7 +743,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 939, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 945, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
