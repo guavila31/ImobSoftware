@@ -5,8 +5,11 @@
 package View;
 
 import java.awt.Color;
+import java.text.DecimalFormat;
 import static javafx.scene.paint.Color.color;
+import javax.swing.BorderFactory;
 import javax.swing.UIManager;
+import javax.swing.border.Border;
 
 /**
  *
@@ -15,6 +18,7 @@ import javax.swing.UIManager;
 public class InternalSimulacao extends javax.swing.JInternalFrame {
 
     private static InternalSimulacao instance;
+    private static final DecimalFormat DecimalFormater = new DecimalFormat("#,##0.00");
 
     public static InternalSimulacao getInstance() {
         if (instance == null) {
@@ -26,13 +30,12 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
     /**
      * Creates new form InternalSimulacao
      */
-    public InternalSimulacao() {
+    public InternalSimulacao(){
         initComponents();
         UIManager.put("Button.arc", 999);
         UIManager.put("Button.background", Color.decode("#7cbc9a"));
-        this.btnCancelar.setBackground(Color.decode("#fa3419"));
-        this.btnCancelar.setForeground(Color.decode("#f3e1b6"));
         UIManager.put("TextField.arc", 999);
+        DecimalFormater.format(txt_RendaFamiliar);
     }
 
     /**
@@ -44,49 +47,35 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel5 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        txtRendaMPess = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        txtNascPess = new javax.swing.JTextField();
-        txtCpf = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txtNomePess = new javax.swing.JTextField();
-        cbxConj = new javax.swing.JCheckBox();
+        txt_RendaFamiliar = new javax.swing.JTextField();
+        lab_RendaFamiliar = new javax.swing.JLabel();
+        lab_ValorEntrada = new javax.swing.JLabel();
+        btn_Calcular = new javax.swing.JButton();
+        lab_ValorImovel = new javax.swing.JLabel();
+        lab_JursoAnual = new javax.swing.JLabel();
+        txt_JurosAnual = new javax.swing.JTextField();
+        lab_QtdeParcelas = new javax.swing.JLabel();
+        txt_QtdeParcelas = new javax.swing.JTextField();
+        txt_ValorEntrada = new javax.swing.JTextField();
+        txt_ValorImovel = new javax.swing.JTextField();
+        txt_CampoErro = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        txtRendaMConj = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        txtNascConj = new javax.swing.JTextField();
-        txtCpfConj = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        txtNomeConj = new javax.swing.JTextField();
+        jPanel7 = new javax.swing.JPanel();
+        lab_ValorTotal = new javax.swing.JLabel();
+        lab_ValorFinanciado = new javax.swing.JLabel();
+        lab_JurosMensal = new javax.swing.JLabel();
+        lab_CustoEfetivo = new javax.swing.JLabel();
+        txt_CustoEfetivo = new javax.swing.JTextField();
+        txt_ValorTotal = new javax.swing.JTextField();
+        txt_ValorFinanciado = new javax.swing.JTextField();
+        txt_JurosMensal = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        lab_StatusSimulacao = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jSeparator3 = new javax.swing.JSeparator();
-        jPanel3 = new javax.swing.JPanel();
-        txtValorTotal = new javax.swing.JTextField();
-        txtParcelas = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        txtPagMensal = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        txtValorFinanc = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        txtValorEntrada = new javax.swing.JTextField();
-        txtValorImovel = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        brnEditar = new javax.swing.JButton();
-        btnPesquisar = new javax.swing.JButton();
-        btnImprimir = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
-        btnNovo = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createEtchedBorder());
         setClosable(true);
@@ -103,303 +92,232 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         setPreferredSize(new java.awt.Dimension(1500, 900));
         getContentPane().setLayout(null);
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Simulação de Financiamento", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
         jPanel5.setLayout(null);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 153, 142)), "Pessoa", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 20), new java.awt.Color(243, 225, 182))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 153, 142)), "Infomações", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 20), new java.awt.Color(243, 225, 182))); // NOI18N
         jPanel4.setLayout(null);
 
-        txtRendaMPess.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtRendaMPess.setEnabled(false);
-        jPanel4.add(txtRendaMPess);
-        txtRendaMPess.setBounds(190, 210, 250, 35);
+        txt_RendaFamiliar.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jPanel4.add(txt_RendaFamiliar);
+        txt_RendaFamiliar.setBounds(100, 120, 250, 35);
 
-        jLabel7.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setText("Renda Mensal");
-        jPanel4.add(jLabel7);
-        jLabel7.setBounds(20, 213, 160, 30);
+        lab_RendaFamiliar.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lab_RendaFamiliar.setText("Renda familiar mensal");
+        jPanel4.add(lab_RendaFamiliar);
+        lab_RendaFamiliar.setBounds(100, 90, 220, 25);
 
-        jLabel8.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel8.setText("Nascimento");
-        jPanel4.add(jLabel8);
-        jLabel8.setBounds(20, 163, 160, 30);
+        lab_ValorEntrada.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lab_ValorEntrada.setText("Entrada");
+        jPanel4.add(lab_ValorEntrada);
+        lab_ValorEntrada.setBounds(100, 250, 140, 25);
 
-        txtNascPess.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtNascPess.setEnabled(false);
-        jPanel4.add(txtNascPess);
-        txtNascPess.setBounds(190, 160, 250, 35);
-
-        txtCpf.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtCpf.setEnabled(false);
-        jPanel4.add(txtCpf);
-        txtCpf.setBounds(190, 110, 250, 35);
-
-        jLabel9.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel9.setText("CPF");
-        jPanel4.add(jLabel9);
-        jLabel9.setBounds(20, 113, 160, 30);
-
-        jLabel10.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel10.setText("Nome");
-        jLabel10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel4.add(jLabel10);
-        jLabel10.setBounds(20, 63, 160, 30);
-
-        txtNomePess.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtNomePess.setEnabled(false);
-        jPanel4.add(txtNomePess);
-        txtNomePess.setBounds(190, 60, 250, 35);
-
-        cbxConj.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        cbxConj.setText("Possui Conjuge   ");
-        cbxConj.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        cbxConj.setEnabled(false);
-        cbxConj.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        cbxConj.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        cbxConj.addActionListener(new java.awt.event.ActionListener() {
+        btn_Calcular.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        btn_Calcular.setText("Calcular");
+        btn_Calcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxConjActionPerformed(evt);
+                btn_CalcularActionPerformed(evt);
             }
         });
-        jPanel4.add(cbxConj);
-        cbxConj.setBounds(16, 250, 190, 30);
+        jPanel4.add(btn_Calcular);
+        btn_Calcular.setBounds(100, 520, 250, 50);
+
+        lab_ValorImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lab_ValorImovel.setText("Valor do Imóvel");
+        jPanel4.add(lab_ValorImovel);
+        lab_ValorImovel.setBounds(100, 170, 140, 25);
+
+        lab_JursoAnual.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lab_JursoAnual.setText("Taxa de juros anual");
+        jPanel4.add(lab_JursoAnual);
+        lab_JursoAnual.setBounds(100, 330, 170, 25);
+
+        txt_JurosAnual.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jPanel4.add(txt_JurosAnual);
+        txt_JurosAnual.setBounds(100, 360, 250, 35);
+
+        lab_QtdeParcelas.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lab_QtdeParcelas.setText("Quantidade de parcelas");
+        jPanel4.add(lab_QtdeParcelas);
+        lab_QtdeParcelas.setBounds(100, 410, 190, 25);
+
+        txt_QtdeParcelas.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jPanel4.add(txt_QtdeParcelas);
+        txt_QtdeParcelas.setBounds(100, 440, 250, 35);
+
+        txt_ValorEntrada.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jPanel4.add(txt_ValorEntrada);
+        txt_ValorEntrada.setBounds(100, 280, 250, 35);
+
+        txt_ValorImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jPanel4.add(txt_ValorImovel);
+        txt_ValorImovel.setBounds(100, 200, 250, 35);
+
+        txt_CampoErro.setForeground(new java.awt.Color(204, 204, 204));
+        txt_CampoErro.setText("Informações iniciais!");
+        jPanel4.add(txt_CampoErro);
+        txt_CampoErro.setBounds(100, 30, 250, 50);
 
         jPanel5.add(jPanel4);
-        jPanel4.setBounds(60, 40, 450, 325);
+        jPanel4.setBounds(60, 40, 450, 790);
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 153, 142), 1, true), "Conjugue", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 18), new java.awt.Color(243, 225, 182))); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 153, 142), 1, true), "Resultado", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 18), new java.awt.Color(243, 225, 182))); // NOI18N
         jPanel6.setLayout(null);
 
-        txtRendaMConj.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtRendaMConj.setEnabled(false);
-        jPanel6.add(txtRendaMConj);
-        txtRendaMConj.setBounds(180, 210, 250, 35);
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 153, 142), 1, true), "Resultado", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 18), new java.awt.Color(243, 225, 182))); // NOI18N
+        jPanel7.setLayout(null);
+        jPanel6.add(jPanel7);
+        jPanel7.setBounds(670, -50, 450, 790);
 
-        jLabel11.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Renda Mensal");
-        jPanel6.add(jLabel11);
-        jLabel11.setBounds(10, 213, 160, 30);
+        lab_ValorTotal.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        lab_ValorTotal.setText("Valor total pago");
+        jPanel6.add(lab_ValorTotal);
+        lab_ValorTotal.setBounds(100, 140, 180, 25);
 
-        jLabel22.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel22.setText("Nascimento");
-        jPanel6.add(jLabel22);
-        jLabel22.setBounds(10, 163, 160, 30);
+        lab_ValorFinanciado.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        lab_ValorFinanciado.setText("Valor financiado");
+        jPanel6.add(lab_ValorFinanciado);
+        lab_ValorFinanciado.setBounds(100, 220, 200, 25);
 
-        txtNascConj.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtNascConj.setEnabled(false);
-        jPanel6.add(txtNascConj);
-        txtNascConj.setBounds(180, 160, 250, 35);
+        lab_JurosMensal.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        lab_JurosMensal.setText("Taxa de juros mensais");
+        jPanel6.add(lab_JurosMensal);
+        lab_JurosMensal.setBounds(100, 300, 200, 25);
 
-        txtCpfConj.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtCpfConj.setEnabled(false);
-        jPanel6.add(txtCpfConj);
-        txtCpfConj.setBounds(180, 110, 250, 35);
+        lab_CustoEfetivo.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        lab_CustoEfetivo.setText("Custo efetivo total");
+        jPanel6.add(lab_CustoEfetivo);
+        lab_CustoEfetivo.setBounds(100, 380, 160, 30);
 
-        jLabel23.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel23.setText("CPF");
-        jPanel6.add(jLabel23);
-        jLabel23.setBounds(10, 110, 160, 30);
+        txt_CustoEfetivo.setEditable(false);
+        txt_CustoEfetivo.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jPanel6.add(txt_CustoEfetivo);
+        txt_CustoEfetivo.setBounds(100, 410, 250, 35);
 
-        jLabel24.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel24.setText("Nome");
-        jPanel6.add(jLabel24);
-        jLabel24.setBounds(10, 63, 160, 30);
+        txt_ValorTotal.setEditable(false);
+        txt_ValorTotal.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jPanel6.add(txt_ValorTotal);
+        txt_ValorTotal.setBounds(100, 170, 250, 35);
 
-        txtNomeConj.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtNomeConj.setEnabled(false);
-        jPanel6.add(txtNomeConj);
-        txtNomeConj.setBounds(180, 60, 250, 35);
+        txt_ValorFinanciado.setEditable(false);
+        txt_ValorFinanciado.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jPanel6.add(txt_ValorFinanciado);
+        txt_ValorFinanciado.setBounds(100, 250, 250, 35);
+
+        txt_JurosMensal.setEditable(false);
+        txt_JurosMensal.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        jPanel6.add(txt_JurosMensal);
+        txt_JurosMensal.setBounds(100, 330, 250, 35);
+
+        jLabel10.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        jLabel10.setText("Status simulação");
+        jPanel6.add(jLabel10);
+        jLabel10.setBounds(100, 60, 170, 25);
+
+        lab_StatusSimulacao.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        lab_StatusSimulacao.setText("-");
+        jPanel6.add(lab_StatusSimulacao);
+        lab_StatusSimulacao.setBounds(100, 90, 250, 30);
 
         jPanel5.add(jPanel6);
-        jPanel6.setBounds(660, 40, 450, 325);
+        jPanel6.setBounds(660, 40, 450, 790);
 
         jSeparator1.setForeground(new java.awt.Color(35, 153, 142));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel5.add(jSeparator1);
-        jSeparator1.setBounds(580, 55, 20, 310);
+        jSeparator1.setBounds(580, 55, 20, 770);
 
         getContentPane().add(jPanel5);
-        jPanel5.setBounds(170, 10, 1160, 400);
+        jPanel5.setBounds(170, 10, 1160, 850);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 30))); // NOI18N
         jPanel1.setLayout(null);
         getContentPane().add(jPanel1);
         jPanel1.setBounds(12, 13, 961, 0);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 30), new java.awt.Color(124, 188, 154))); // NOI18N
-        jPanel2.setLayout(null);
-
-        jSeparator3.setForeground(new java.awt.Color(35, 153, 142));
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator3);
-        jSeparator3.setBounds(580, 65, 12, 220);
-
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 153, 142)), "Pessoa", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 20), new java.awt.Color(243, 225, 182))); // NOI18N
-        jPanel3.setLayout(null);
-
-        txtValorTotal.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jPanel3.add(txtValorTotal);
-        txtValorTotal.setBounds(180, 40, 250, 35);
-
-        txtParcelas.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jPanel3.add(txtParcelas);
-        txtParcelas.setBounds(180, 100, 250, 35);
-
-        jLabel19.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel19.setText("Pagamento mensal");
-        jPanel3.add(jLabel19);
-        jLabel19.setBounds(10, 170, 160, 30);
-
-        txtPagMensal.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtPagMensal.setEnabled(false);
-        jPanel3.add(txtPagMensal);
-        txtPagMensal.setBounds(180, 170, 250, 35);
-
-        jLabel17.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel17.setText("Valor Total");
-        jPanel3.add(jLabel17);
-        jLabel17.setBounds(10, 50, 160, 30);
-
-        jLabel18.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel18.setText("Parcelas");
-        jPanel3.add(jLabel18);
-        jLabel18.setBounds(10, 110, 160, 30);
-
-        jPanel2.add(jPanel3);
-        jPanel3.setBounds(640, 40, 450, 240);
-
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 153, 142)), "Pessoa", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI Semilight", 1, 20), new java.awt.Color(243, 225, 182))); // NOI18N
-        jPanel7.setLayout(null);
-
-        txtValorFinanc.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtValorFinanc.setEnabled(false);
-        jPanel7.add(txtValorFinanc);
-        txtValorFinanc.setBounds(180, 170, 250, 35);
-
-        jLabel15.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel15.setText("Valor Financiado");
-        jPanel7.add(jLabel15);
-        jLabel15.setBounds(10, 170, 160, 30);
-
-        jLabel14.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel14.setText("Valor da Entrada");
-        jPanel7.add(jLabel14);
-        jLabel14.setBounds(10, 110, 160, 30);
-
-        txtValorEntrada.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jPanel7.add(txtValorEntrada);
-        txtValorEntrada.setBounds(180, 110, 250, 35);
-
-        txtValorImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jPanel7.add(txtValorImovel);
-        txtValorImovel.setBounds(180, 50, 250, 35);
-
-        jLabel13.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel13.setText("Valor Imóvel");
-        jPanel7.add(jLabel13);
-        jLabel13.setBounds(10, 50, 160, 30);
-
-        jPanel2.add(jPanel7);
-        jPanel7.setBounds(70, 40, 450, 240);
-
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(170, 420, 1160, 320);
-
-        brnEditar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        brnEditar.setForeground(new java.awt.Color(51, 51, 51));
-        brnEditar.setText("Editar");
-        getContentPane().add(brnEditar);
-        brnEditar.setBounds(670, 760, 175, 70);
-
-        btnPesquisar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        btnPesquisar.setForeground(new java.awt.Color(51, 51, 51));
-        btnPesquisar.setText("Pesquisar");
-        getContentPane().add(btnPesquisar);
-        btnPesquisar.setBounds(230, 760, 175, 70);
-
-        btnImprimir.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        btnImprimir.setForeground(new java.awt.Color(51, 51, 51));
-        btnImprimir.setText("Imprimir");
-        getContentPane().add(btnImprimir);
-        btnImprimir.setBounds(880, 760, 175, 70);
-
-        btnCancelar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(51, 51, 51));
-        btnCancelar.setText("Cancelar");
-        getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(1090, 760, 175, 70);
-
-        btnNovo.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        btnNovo.setForeground(new java.awt.Color(51, 51, 51));
-        btnNovo.setText("Novo");
-        getContentPane().add(btnNovo);
-        btnNovo.setBounds(450, 760, 175, 70);
-
         setBounds(0, 0, 1358, 984);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbxConjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxConjActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxConjActionPerformed
+    private void btn_CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CalcularActionPerformed
+        double rendaFamiliar = Double.parseDouble(txt_RendaFamiliar.getText());
+        double valorImovel = Double.parseDouble(txt_ValorImovel.getText());
+        double entrada = Double.parseDouble(txt_ValorEntrada.getText());
+        double taxaJurosAnual = Double.parseDouble(txt_JurosAnual.getText());
+        int qtdeParcelas = Integer.parseInt(txt_QtdeParcelas.getText());
+        double taxaJurosMensal = taxaJurosAnual/1200;
+        double valorFinanciado = valorImovel-entrada;
+        double parcelaAmortizacao = valorFinanciado/qtdeParcelas;
+        double saldoDevedor = valorFinanciado;
+        double jurosTotal = 0;
+        
+        if(entrada < valorImovel*0.2){
+            txt_ValorEntrada.setBorder(BorderFactory.createLineBorder(Color.red));
+            txt_CampoErro.setText("<html><body>Valor de entrada deve corresponder à<br>pelo menos 20% do valor do imóvel</body></html>");
+            txt_CampoErro.setForeground(Color.red);
+            return;
+        }
+        else{
+            txt_ValorEntrada.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
+            txt_CampoErro.setText("Informações iniciais!");
+            txt_CampoErro.setForeground(Color.LIGHT_GRAY);
+        }
+        
+        
+        for(int i = 0; i<qtdeParcelas; i++){
+            double jurosMensal = saldoDevedor*taxaJurosMensal;
+            jurosTotal = jurosTotal+jurosMensal;
+            saldoDevedor = saldoDevedor-parcelaAmortizacao;
+        }
+        
+        double valorTotalPago = valorImovel+jurosTotal;
+        float custoEfetivo = (float) (100*valorTotalPago/valorImovel);
+        
+        double maiorParcela = valorFinanciado*taxaJurosMensal+parcelaAmortizacao;
+        if(rendaFamiliar < maiorParcela){
+            lab_StatusSimulacao.setText("Renda mensal insulficiente");
+            lab_StatusSimulacao.setForeground(Color.red);
+        }
+        else{
+            lab_StatusSimulacao.setText("OK");
+            lab_StatusSimulacao.setForeground(Color.green);
+        }
+        
+        txt_ValorTotal.setText("R$ "+String.valueOf(DecimalFormater.format(valorTotalPago)));
+        txt_ValorFinanciado.setText("R$ "+String.valueOf(DecimalFormater.format(valorFinanciado)));
+        txt_JurosMensal.setText(String.valueOf(DecimalFormater.format(taxaJurosMensal*100))+" %");
+        txt_CustoEfetivo.setText(String.valueOf(DecimalFormater.format(custoEfetivo))+" %");
+    }//GEN-LAST:event_btn_CalcularActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton brnEditar;
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnImprimir;
-    private javax.swing.JButton btnNovo;
-    private javax.swing.JButton btnPesquisar;
-    private javax.swing.JCheckBox cbxConj;
+    private javax.swing.JButton btn_Calcular;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField txtCpf;
-    private javax.swing.JTextField txtCpfConj;
-    private javax.swing.JTextField txtNascConj;
-    private javax.swing.JTextField txtNascPess;
-    private javax.swing.JTextField txtNomeConj;
-    private javax.swing.JTextField txtNomePess;
-    private javax.swing.JTextField txtPagMensal;
-    private javax.swing.JTextField txtParcelas;
-    private javax.swing.JTextField txtRendaMConj;
-    private javax.swing.JTextField txtRendaMPess;
-    private javax.swing.JTextField txtValorEntrada;
-    private javax.swing.JTextField txtValorFinanc;
-    private javax.swing.JTextField txtValorImovel;
-    private javax.swing.JTextField txtValorTotal;
+    private javax.swing.JLabel lab_CustoEfetivo;
+    private javax.swing.JLabel lab_JurosMensal;
+    private javax.swing.JLabel lab_JursoAnual;
+    private javax.swing.JLabel lab_QtdeParcelas;
+    private javax.swing.JLabel lab_RendaFamiliar;
+    private javax.swing.JLabel lab_StatusSimulacao;
+    private javax.swing.JLabel lab_ValorEntrada;
+    private javax.swing.JLabel lab_ValorFinanciado;
+    private javax.swing.JLabel lab_ValorImovel;
+    private javax.swing.JLabel lab_ValorTotal;
+    private javax.swing.JLabel txt_CampoErro;
+    private javax.swing.JTextField txt_CustoEfetivo;
+    private javax.swing.JTextField txt_JurosAnual;
+    private javax.swing.JTextField txt_JurosMensal;
+    private javax.swing.JTextField txt_QtdeParcelas;
+    private javax.swing.JTextField txt_RendaFamiliar;
+    private javax.swing.JTextField txt_ValorEntrada;
+    private javax.swing.JTextField txt_ValorFinanciado;
+    private javax.swing.JTextField txt_ValorImovel;
+    private javax.swing.JTextField txt_ValorTotal;
     // End of variables declaration//GEN-END:variables
 }
