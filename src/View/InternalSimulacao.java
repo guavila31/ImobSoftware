@@ -5,8 +5,11 @@
 package View;
 
 import java.awt.Color;
+import java.text.DecimalFormat;
 import static javafx.scene.paint.Color.color;
+import javax.swing.BorderFactory;
 import javax.swing.UIManager;
+import javax.swing.border.Border;
 
 /**
  *
@@ -15,6 +18,7 @@ import javax.swing.UIManager;
 public class InternalSimulacao extends javax.swing.JInternalFrame {
 
     private static InternalSimulacao instance;
+    private static final DecimalFormat DecimalFormater = new DecimalFormat("#,##0.00");
 
     public static InternalSimulacao getInstance() {
         if (instance == null) {
@@ -31,6 +35,7 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         UIManager.put("Button.arc", 999);
         UIManager.put("Button.background", Color.decode("#7cbc9a"));
         UIManager.put("TextField.arc", 999);
+        DecimalFormater.format(txt_RendaFamiliar);
     }
 
     /**
@@ -56,6 +61,7 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         txt_QtdeParcelas = new javax.swing.JTextField();
         txt_ValorEntrada = new javax.swing.JTextField();
         txt_ValorImovel = new javax.swing.JTextField();
+        txt_CampoErro = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         lab_ValorTotal = new javax.swing.JLabel();
@@ -94,17 +100,17 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
 
         txt_RendaFamiliar.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jPanel4.add(txt_RendaFamiliar);
-        txt_RendaFamiliar.setBounds(100, 90, 250, 35);
+        txt_RendaFamiliar.setBounds(100, 120, 250, 35);
 
         lab_RendaFamiliar.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lab_RendaFamiliar.setText("Renda familiar mensal");
         jPanel4.add(lab_RendaFamiliar);
-        lab_RendaFamiliar.setBounds(100, 60, 220, 25);
+        lab_RendaFamiliar.setBounds(100, 90, 220, 25);
 
         lab_ValorEntrada.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lab_ValorEntrada.setText("Entrada");
         jPanel4.add(lab_ValorEntrada);
-        lab_ValorEntrada.setBounds(100, 220, 140, 25);
+        lab_ValorEntrada.setBounds(100, 250, 140, 25);
 
         btn_Calcular.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         btn_Calcular.setText("Calcular");
@@ -114,38 +120,43 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
             }
         });
         jPanel4.add(btn_Calcular);
-        btn_Calcular.setBounds(100, 470, 250, 50);
+        btn_Calcular.setBounds(100, 520, 250, 50);
 
         lab_ValorImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lab_ValorImovel.setText("Valor do Imóvel");
         jPanel4.add(lab_ValorImovel);
-        lab_ValorImovel.setBounds(100, 140, 140, 25);
+        lab_ValorImovel.setBounds(100, 170, 140, 25);
 
         lab_JursoAnual.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lab_JursoAnual.setText("Taxa de juros anual");
         jPanel4.add(lab_JursoAnual);
-        lab_JursoAnual.setBounds(100, 300, 170, 25);
+        lab_JursoAnual.setBounds(100, 330, 170, 25);
 
         txt_JurosAnual.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jPanel4.add(txt_JurosAnual);
-        txt_JurosAnual.setBounds(100, 330, 250, 35);
+        txt_JurosAnual.setBounds(100, 360, 250, 35);
 
         lab_QtdeParcelas.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lab_QtdeParcelas.setText("Quantidade de parcelas");
         jPanel4.add(lab_QtdeParcelas);
-        lab_QtdeParcelas.setBounds(100, 380, 190, 25);
+        lab_QtdeParcelas.setBounds(100, 410, 190, 25);
 
         txt_QtdeParcelas.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jPanel4.add(txt_QtdeParcelas);
-        txt_QtdeParcelas.setBounds(100, 410, 250, 35);
+        txt_QtdeParcelas.setBounds(100, 440, 250, 35);
 
         txt_ValorEntrada.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jPanel4.add(txt_ValorEntrada);
-        txt_ValorEntrada.setBounds(100, 250, 250, 35);
+        txt_ValorEntrada.setBounds(100, 280, 250, 35);
 
         txt_ValorImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jPanel4.add(txt_ValorImovel);
-        txt_ValorImovel.setBounds(100, 170, 250, 35);
+        txt_ValorImovel.setBounds(100, 200, 250, 35);
+
+        txt_CampoErro.setForeground(new java.awt.Color(204, 204, 204));
+        txt_CampoErro.setText("Informações iniciais!");
+        jPanel4.add(txt_CampoErro);
+        txt_CampoErro.setBounds(100, 30, 250, 50);
 
         jPanel5.add(jPanel4);
         jPanel4.setBounds(60, 40, 450, 790);
@@ -233,13 +244,25 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         double entrada = Double.parseDouble(txt_ValorEntrada.getText());
         double taxaJurosAnual = Double.parseDouble(txt_JurosAnual.getText());
         int qtdeParcelas = Integer.parseInt(txt_QtdeParcelas.getText());
-        
         double taxaJurosMensal = taxaJurosAnual/1200;
         double valorFinanciado = valorImovel-entrada;
         double parcelaAmortizacao = valorFinanciado/qtdeParcelas;
-        
         double saldoDevedor = valorFinanciado;
         double jurosTotal = 0;
+        
+        if(entrada < valorImovel*0.2){
+            txt_ValorEntrada.setBorder(BorderFactory.createLineBorder(Color.red));
+            txt_CampoErro.setText("<html><body>Valor de entrada deve corresponder à<br>pelo menos 20% do valor do imóvel</body></html>");
+            txt_CampoErro.setForeground(Color.red);
+            return;
+        }
+        else{
+            txt_ValorEntrada.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
+            txt_CampoErro.setText("Informações iniciais!");
+            txt_CampoErro.setForeground(Color.LIGHT_GRAY);
+        }
+        
+        
         for(int i = 0; i<qtdeParcelas; i++){
             double jurosMensal = saldoDevedor*taxaJurosMensal;
             jurosTotal = jurosTotal+jurosMensal;
@@ -252,15 +275,17 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         double maiorParcela = valorFinanciado*taxaJurosMensal+parcelaAmortizacao;
         if(rendaFamiliar < maiorParcela){
             lab_StatusSimulacao.setText("Renda mensal insulficiente");
+            lab_StatusSimulacao.setForeground(Color.red);
         }
         else{
             lab_StatusSimulacao.setText("OK");
+            lab_StatusSimulacao.setForeground(Color.green);
         }
         
-        txt_ValorTotal.setText(String.valueOf(valorTotalPago));
-        txt_ValorFinanciado.setText(String.valueOf(valorFinanciado));
-        txt_JurosMensal.setText(String.valueOf(taxaJurosMensal*100)+" %");
-        txt_CustoEfetivo.setText(String.valueOf(custoEfetivo)+" %");
+        txt_ValorTotal.setText("R$ "+String.valueOf(DecimalFormater.format(valorTotalPago)));
+        txt_ValorFinanciado.setText("R$ "+String.valueOf(DecimalFormater.format(valorFinanciado)));
+        txt_JurosMensal.setText(String.valueOf(DecimalFormater.format(taxaJurosMensal*100))+" %");
+        txt_CustoEfetivo.setText(String.valueOf(DecimalFormater.format(custoEfetivo))+" %");
     }//GEN-LAST:event_btn_CalcularActionPerformed
 
 
@@ -284,6 +309,7 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lab_ValorFinanciado;
     private javax.swing.JLabel lab_ValorImovel;
     private javax.swing.JLabel lab_ValorTotal;
+    private javax.swing.JLabel txt_CampoErro;
     private javax.swing.JTextField txt_CustoEfetivo;
     private javax.swing.JTextField txt_JurosAnual;
     private javax.swing.JTextField txt_JurosMensal;
