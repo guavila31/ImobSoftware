@@ -11,6 +11,7 @@ import javax.swing.BorderFactory;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
+
 /**
  *
  * @author gusta
@@ -35,7 +36,7 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         UIManager.put("Button.arc", 999);
         UIManager.put("Button.background", Color.decode("#7cbc9a"));
         UIManager.put("TextField.arc", 999);
-        DecimalFormater.format(txt_RendaFamiliar);
+//        DecimalFormater.format(txt_RendaFamiliar);
     }
 
     /**
@@ -154,9 +155,10 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         txt_ValorImovel.setBounds(100, 200, 250, 35);
 
         txt_CampoErro.setForeground(new java.awt.Color(204, 204, 204));
+        txt_CampoErro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt_CampoErro.setText("Informações iniciais!");
         jPanel4.add(txt_CampoErro);
-        txt_CampoErro.setBounds(100, 30, 250, 50);
+        txt_CampoErro.setBounds(80, 40, 290, 50);
 
         jPanel5.add(jPanel4);
         jPanel4.setBounds(60, 40, 450, 790);
@@ -252,7 +254,7 @@ public class InternalSimulacao extends javax.swing.JInternalFrame {
         
         if(entrada < valorImovel*0.2){
             txt_ValorEntrada.setBorder(BorderFactory.createLineBorder(Color.red));
-            txt_CampoErro.setText("<html><body>Valor de entrada deve corresponder à<br>pelo menos 20% do valor do imóvel</body></html>");
+            txt_CampoErro.setText("<html><body>Valor de entrada deve corresponder à pelo menos 20% do valor do imóvel</body></html>");
             txt_CampoErro.setForeground(Color.red);
             return;
         }

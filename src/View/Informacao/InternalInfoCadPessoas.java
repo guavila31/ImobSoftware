@@ -9,6 +9,7 @@ import dao.UsuarioDAO;
 import java.sql.*;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
@@ -20,6 +21,8 @@ import net.sf.jasperreports.view.JasperViewer;
 public class InternalInfoCadPessoas extends javax.swing.JInternalFrame {
 
     private Connection conn;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
     private static InternalInfoCadPessoas instance;
 
     public static InternalInfoCadPessoas getInstance() {
@@ -42,13 +45,31 @@ public class InternalInfoCadPessoas extends javax.swing.JInternalFrame {
         if (confirma == JOptionPane.YES_OPTION) {
             try {
                 HashMap filtro = new HashMap();
-                filtro.put("cpf", txtFiltro.getText());
+                filtro.put("cpf", txtCpf.getText());
                 JasperPrint print = JasperFillManager.fillReport("C:/Users/gusta/Documents/Relatorios/Ficha_Cadastro_Pessoa.jasper", filtro, conn);
                 JasperViewer.viewReport(print, false);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }
         }
+    }
+
+    private void pesquisar_pessoa() {
+        String sql = "select nome as Nome, cpf as CPF from tb_cadastropessoa where nome like ?";
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, txtFiltro.getText() + "%");
+            rs = pst.executeQuery();
+            tblPessoa.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    private void setar_campos_pessoa() {
+        int setar = tblPessoa.getSelectedRow();
+        txtNome.setText(tblPessoa.getModel().getValueAt(setar, 0).toString());
+        txtCpf.setText(tblPessoa.getModel().getValueAt(setar, 1).toString());
     }
 
     /**
@@ -62,10 +83,12 @@ public class InternalInfoCadPessoas extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblPessoa = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         txtFiltro = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
+        txtCpf = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
 
         setTitle("Pessoas Cadastradas");
         setMaximumSize(new java.awt.Dimension(580, 610));
@@ -78,9 +101,9 @@ public class InternalInfoCadPessoas extends javax.swing.JInternalFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Pessoas Cadastradas");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 40, 570, 50);
+        jLabel1.setBounds(0, 10, 570, 50);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblPessoa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -91,21 +114,31 @@ public class InternalInfoCadPessoas extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tblPessoa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblPessoaMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblPessoa);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 200, 510, 260);
+        jScrollPane1.setBounds(30, 140, 510, 200);
 
         jLabel2.setFont(new java.awt.Font("Nirmala UI", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(124, 188, 154));
         jLabel2.setText("Filtrar por Nome:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 120, 150, 30);
+        jLabel2.setBounds(30, 70, 150, 30);
 
         txtFiltro.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
         txtFiltro.setText("Digite aqui...");
+        txtFiltro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtFiltroMouseEntered(evt);
+            }
+        });
         getContentPane().add(txtFiltro);
-        txtFiltro.setBounds(30, 150, 510, 30);
+        txtFiltro.setBounds(30, 100, 510, 30);
 
         jToggleButton1.setFont(new java.awt.Font("Nirmala UI", 1, 24)); // NOI18N
         jToggleButton1.setText("Visualizar");
@@ -117,21 +150,50 @@ public class InternalInfoCadPessoas extends javax.swing.JInternalFrame {
         getContentPane().add(jToggleButton1);
         jToggleButton1.setBounds(30, 480, 510, 50);
 
+        txtCpf.setBorder(javax.swing.BorderFactory.createTitledBorder("CPF Pessoa"));
+        getContentPane().add(txtCpf);
+        txtCpf.setBounds(30, 410, 510, 50);
+
+        txtNome.setBorder(javax.swing.BorderFactory.createTitledBorder("Nome Pessoa"));
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtNome);
+        txtNome.setBounds(30, 350, 510, 50);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-       imprimir_CadastroPessoa();
+        imprimir_CadastroPessoa();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void txtFiltroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFiltroMouseEntered
+        // TODO add your handling code here:
+        pesquisar_pessoa();
+    }//GEN-LAST:event_txtFiltroMouseEntered
+
+    private void tblPessoaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPessoaMouseClicked
+        // TODO add your handling code here:
+        setar_campos_pessoa();
+    }//GEN-LAST:event_tblPessoaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JTable tblPessoa;
+    private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtFiltro;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }

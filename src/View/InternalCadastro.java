@@ -4,14 +4,27 @@
  */
 package View;
 
+import dao.ConnectionFactory;
+import entity.CadastroComprador;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import jpa.CadastroCompradorDAO;
 
 /**
  *
  * @author gusta
  */
 public class InternalCadastro extends javax.swing.JInternalFrame {
+
+    private Connection conn;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
 
     private static InternalCadastro instance;
 
@@ -21,14 +34,16 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         }
         return instance;
     }
-
-   
+    private CadastroCompradorDAO cadastroCompradorDAO;
+    private CadastroComprador comprador;
 
     /**
      * Creates new form InternalCadastro
      */
     public InternalCadastro() {
         initComponents();
+        conn = ConnectionFactory.getConnection();
+
         //this.getContentPane().setBackground(Color.decode("#1d5e69"));
         // Codigo para definir a cor do jTabblaPane selecionado
         //this.txtNome.setBackground(Color.decode("#263238"));
@@ -93,7 +108,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         btnPesquisar1 = new javax.swing.JButton();
         btnNovo1 = new javax.swing.JButton();
         brnEditar1 = new javax.swing.JButton();
-        btnImprimir1 = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
         btnCancelar1 = new javax.swing.JButton();
         panelCadImovel = new javax.swing.JPanel();
         panelVendedor = new javax.swing.JPanel();
@@ -117,8 +132,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         txtEndVend = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         boxVend = new javax.swing.JComboBox<>();
-        lblProfissaoVend = new javax.swing.JLabel();
-        txtProfissaoVend = new javax.swing.JTextField();
         lblEmailVend = new javax.swing.JLabel();
         txtEmailVend = new javax.swing.JTextField();
         lblCPF_Vend = new javax.swing.JLabel();
@@ -131,10 +144,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         txtTelVend = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtCelVend = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        txtTelVendConj = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        txtCelVendConj = new javax.swing.JTextField();
         panelImovel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         boxLogradouroImovel = new javax.swing.JComboBox<>();
@@ -152,6 +161,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         txtCidadeImovel = new javax.swing.JTextField();
         lblEnderecoImovel = new javax.swing.JLabel();
         txtEnderecoImovel = new javax.swing.JTextField();
+        txtIdImovel = new javax.swing.JTextField();
         btnPesquisar = new javax.swing.JButton();
         btnNovo = new javax.swing.JButton();
         brnEditar = new javax.swing.JButton();
@@ -185,6 +195,11 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         lblNome.setBounds(190, 130, 53, 25);
 
         txtNome.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
         panelCadPessoa.add(txtNome);
         txtNome.setBounds(260, 120, 720, 30);
 
@@ -327,6 +342,11 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
 
         BoxEstadoCivil.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         BoxEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Casado(a)", "Divorciado(a)", "Separado(a)", "Solteiro(a)", "Viuvo(a)" }));
+        BoxEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoxEstadoCivilActionPerformed(evt);
+            }
+        });
         panelCadPessoa.add(BoxEstadoCivil);
         BoxEstadoCivil.setBounds(260, 470, 170, 30);
 
@@ -337,7 +357,11 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         lblNomeConjuge.setBounds(120, 540, 124, 25);
 
         txtNomeConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtNomeConjuge.setEnabled(false);
+        txtNomeConjuge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeConjugeActionPerformed(evt);
+            }
+        });
         panelCadPessoa.add(txtNomeConjuge);
         txtNomeConjuge.setBounds(260, 530, 720, 30);
 
@@ -347,7 +371,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         lblCPFConjuge.setBounds(990, 540, 34, 25);
 
         txtCPFConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtCPFConjuge.setEnabled(false);
         panelCadPessoa.add(txtCPFConjuge);
         txtCPFConjuge.setBounds(1040, 530, 230, 30);
 
@@ -358,17 +381,14 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         lblDataNascConjuge.setBounds(80, 600, 165, 25);
 
         txtDataNascConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtDataNascConjuge.setEnabled(false);
         panelCadPessoa.add(txtDataNascConjuge);
-        txtDataNascConjuge.setBounds(260, 590, 180, 30);
+        txtDataNascConjuge.setBounds(270, 590, 180, 30);
 
         txtProfissaoConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtProfissaoConjuge.setEnabled(false);
         panelCadPessoa.add(txtProfissaoConjuge);
         txtProfissaoConjuge.setBounds(550, 590, 430, 30);
 
         txtRendaConjuge.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtRendaConjuge.setEnabled(false);
         panelCadPessoa.add(txtRendaConjuge);
         txtRendaConjuge.setBounds(1120, 590, 150, 30);
 
@@ -398,26 +418,46 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         btnPesquisar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnPesquisar1.setForeground(new java.awt.Color(51, 51, 51));
         btnPesquisar1.setText("Pesquisar");
+        btnPesquisar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisar1ActionPerformed(evt);
+            }
+        });
         panelCadPessoa.add(btnPesquisar1);
-        btnPesquisar1.setBounds(100, 680, 175, 70);
+        btnPesquisar1.setBounds(110, 680, 175, 70);
 
         btnNovo1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnNovo1.setForeground(new java.awt.Color(51, 51, 51));
         btnNovo1.setText("Novo");
+        btnNovo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovo1ActionPerformed(evt);
+            }
+        });
         panelCadPessoa.add(btnNovo1);
         btnNovo1.setBounds(340, 680, 175, 70);
 
         brnEditar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         brnEditar1.setForeground(new java.awt.Color(51, 51, 51));
         brnEditar1.setText("Editar");
+        brnEditar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brnEditar1ActionPerformed(evt);
+            }
+        });
         panelCadPessoa.add(brnEditar1);
         brnEditar1.setBounds(580, 680, 175, 70);
 
-        btnImprimir1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        btnImprimir1.setForeground(new java.awt.Color(51, 51, 51));
-        btnImprimir1.setText("Imprimir");
-        panelCadPessoa.add(btnImprimir1);
-        btnImprimir1.setBounds(840, 680, 175, 70);
+        btnExcluir.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        btnExcluir.setForeground(new java.awt.Color(51, 51, 51));
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+        panelCadPessoa.add(btnExcluir);
+        btnExcluir.setBounds(840, 680, 175, 70);
 
         btnCancelar1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnCancelar1.setForeground(new java.awt.Color(51, 51, 51));
@@ -439,7 +479,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         lblCPF_Vend1.setBounds(930, 320, 34, 25);
 
         txtCPFVendConj.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtCPFVendConj.setEnabled(false);
         panelVendedor.add(txtCPFVendConj);
         txtCPFVendConj.setBounds(980, 310, 260, 40);
 
@@ -449,7 +488,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         lblNomeVend1.setBounds(20, 320, 124, 25);
 
         txtNomeVend1.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtNomeVend1.setEnabled(false);
         panelVendedor.add(txtNomeVend1);
         txtNomeVend1.setBounds(150, 310, 750, 40);
 
@@ -527,16 +565,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         panelVendedor.add(boxVend);
         boxVend.setBounds(150, 260, 170, 40);
 
-        lblProfissaoVend.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        lblProfissaoVend.setText("E-mail:");
-        panelVendedor.add(lblProfissaoVend);
-        lblProfissaoVend.setBounds(90, 370, 53, 25);
-
-        txtProfissaoVend.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        txtProfissaoVend.setEnabled(false);
-        panelVendedor.add(txtProfissaoVend);
-        txtProfissaoVend.setBounds(150, 360, 470, 40);
-
         lblEmailVend.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblEmailVend.setText("E-mail:");
         panelVendedor.add(lblEmailVend);
@@ -589,25 +617,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         jLabel5.setBounds(950, 120, 60, 25);
         panelVendedor.add(txtCelVend);
         txtCelVend.setBounds(1020, 110, 220, 40);
-
-        jLabel10.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel10.setText("Telefone:");
-        panelVendedor.add(jLabel10);
-        jLabel10.setBounds(640, 370, 80, 25);
-
-        txtTelVendConj.setEnabled(false);
-        panelVendedor.add(txtTelVendConj);
-        txtTelVendConj.setBounds(720, 360, 210, 40);
-
-        jLabel11.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Celular:");
-        panelVendedor.add(jLabel11);
-        jLabel11.setBounds(950, 370, 60, 25);
-
-        txtCelVendConj.setEnabled(false);
-        panelVendedor.add(txtCelVendConj);
-        txtCelVendConj.setBounds(1020, 360, 220, 40);
 
         panelCadImovel.add(panelVendedor);
         panelVendedor.setBounds(20, 290, 1340, 440);
@@ -694,6 +703,8 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         txtEnderecoImovel.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         panelImovel.add(txtEnderecoImovel);
         txtEnderecoImovel.setBounds(430, 60, 310, 40);
+        panelImovel.add(txtIdImovel);
+        txtIdImovel.setBounds(330, 30, 6, 22);
 
         panelCadImovel.add(panelImovel);
         panelImovel.setBounds(20, 50, 1340, 220);
@@ -701,12 +712,22 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         btnPesquisar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnPesquisar.setForeground(new java.awt.Color(51, 51, 51));
         btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
         panelCadImovel.add(btnPesquisar);
-        btnPesquisar.setBounds(110, 760, 175, 70);
+        btnPesquisar.setBounds(120, 760, 175, 70);
 
         btnNovo.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
         btnNovo.setForeground(new java.awt.Color(51, 51, 51));
         btnNovo.setText("Novo");
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoActionPerformed(evt);
+            }
+        });
         panelCadImovel.add(btnNovo);
         btnNovo.setBounds(360, 760, 175, 70);
 
@@ -754,6 +775,443 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumeroImovelActionPerformed
 
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        adicionarImovel();
+    }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void btnNovo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovo1ActionPerformed
+        adicionarComprador();
+//        pesquisar_cliente();
+
+    }//GEN-LAST:event_btnNovo1ActionPerformed
+
+    private void btnPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisar1ActionPerformed
+        pesquisar_comprador();
+
+    }//GEN-LAST:event_btnPesquisar1ActionPerformed
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        pesquisar_comprador();
+    }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void txtNomeConjugeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeConjugeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeConjugeActionPerformed
+
+    private void BoxEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxEstadoCivilActionPerformed
+        if (BoxEstadoCivil.getSelectedItem().toString().equals("Casado(a)")) {
+            txtNomeConjuge.setEnabled(true);
+            txtCPFConjuge.setEnabled(true);
+            txtDataNascConjuge.setEditable(true);
+            txtProfissaoConjuge.setEnabled(true);
+            txtRendaConjuge.setEnabled(true);
+        } else {
+            txtNomeConjuge.setEnabled(false);
+            txtCPFConjuge.setEnabled(false);
+            txtDataNascConjuge.setEditable(false);
+            txtProfissaoConjuge.setEnabled(false);
+            txtRendaConjuge.setEnabled(false);
+
+        }
+    }//GEN-LAST:event_BoxEstadoCivilActionPerformed
+
+    private void brnEditar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnEditar1ActionPerformed
+        alterarComprador();
+    }//GEN-LAST:event_brnEditar1ActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        removerComprado();
+    }//GEN-LAST:event_btnExcluirActionPerformed
+    // feito
+    private void adicionarComprador() {
+        String sql = "insert into tb_cadastropessoa(nome, cpf, dtNascimento, profissao, renda, telefone, celular, email, logradouro,endereco, numeroEnde, "
+                + "complemento, bairro, cidade, uf, cep, estadoCivil, nomeConj, cpfConj, dtNascConj, profissaoConj, rendaConj) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?)";
+
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, txtNome.getText());
+            pst.setString(2, txtCPF.getText());
+            pst.setString(3, txtDataNasc.getText());
+            pst.setString(4, txtProfissao.getText());
+            pst.setString(5, txtRenda.getText());
+            pst.setString(6, txtTelefone.getText());
+            pst.setString(7, txtCelular.getText());
+            pst.setString(8, txtEmail.getText());
+            pst.setString(9, boxLogradouro.getSelectedItem().toString());
+            pst.setString(10, txtEndereco.getText());
+            pst.setString(11, txtNumero.getText());
+            pst.setString(12, txtComplemento.getText());
+            pst.setString(13, txtBairro.getText());
+            pst.setString(14, txtCidade.getText());
+            pst.setString(15, BoxUF.getSelectedItem().toString());
+            pst.setString(16, txtCEP.getText());
+            pst.setString(17, BoxEstadoCivil.getSelectedItem().toString());
+            pst.setString(18, txtNomeConjuge.getText());
+            pst.setString(19, txtCPFConjuge.getText());
+            pst.setString(20, txtDataNascConjuge.getText());
+            pst.setString(21, txtProfissaoConjuge.getText());
+            pst.setString(22, txtRendaConjuge.getText());
+
+            //campos obrigatórios
+            if ((txtNome.getText().isEmpty()) || (txtCPF.getText().isEmpty()) || (txtDataNasc.getText().isEmpty()) || (txtProfissao.getText().isEmpty()) || (txtRenda.getText().isEmpty())
+                    || (txtCelular.getText().isEmpty()) || (txtEmail.getText().isEmpty()) || (txtEndereco.getText().isEmpty()) || (txtBairro.getText().isEmpty())
+                    || (txtCidade.getText().isEmpty()) || (txtCEP.getText().isEmpty())) {
+                JOptionPane.showMessageDialog(this, "Preencha os campos obrigatórios!");
+            } else {
+                int adicionado = pst.executeUpdate();
+                if (adicionado > 0) {
+                    JOptionPane.showMessageDialog(this, "Dados adicionado com sucesso!");
+                    limpar();
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }
+
+    private void alterarComprador() {
+        String sql = "update tb_cadastropessoa set nome=?, cpf=?, dtNascimento=?, profissao=?, renda=?, telefone=?, celular=?, email=?, logradouro=?, endereco=? , numeroEnde=?, complemento=?, bairro=?, cidade=?, uf=?, cep=?, "
+                + "estadoCivil=?, nomeConj=?, cpfConj=?, dtNascConj=?, profissaoConj=?, rendaConj=?";
+
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, txtNome.getText());
+            pst.setString(2, txtCPF.getText());
+            pst.setString(3, txtDataNasc.getText());
+            pst.setString(4, txtProfissao.getText());
+            pst.setString(5, txtRenda.getText());
+            pst.setString(6, txtTelefone.getText());
+            pst.setString(7, txtCelular.getText());
+            pst.setString(8, txtEmail.getText());
+            pst.setString(9, boxLogradouro.getSelectedItem().toString());
+            pst.setString(10, txtEndereco.getText());
+            pst.setString(11, txtNumero.getText());
+            pst.setString(12, txtComplemento.getText());
+            pst.setString(13, txtBairro.getText());
+            pst.setString(14, txtCidade.getText());
+            pst.setString(15, BoxUF.getSelectedItem().toString());
+            pst.setString(16, txtCEP.getText());
+            pst.setString(17, BoxEstadoCivil.getSelectedItem().toString());
+            pst.setString(18, txtNomeConjuge.getText());
+            pst.setString(19, txtCPFConjuge.getText());
+            pst.setString(20, txtDataNascConjuge.getText());
+            pst.setString(21, txtProfissaoConjuge.getText());
+            pst.setString(22, txtRendaConjuge.getText());
+
+            if ((txtNome.getText().isEmpty()) || (txtCPF.getText().isEmpty()) || (txtDataNasc.getText().isEmpty()) || (txtProfissao.getText().isEmpty()) || (txtRenda.getText().isEmpty())
+                    || (txtCelular.getText().isEmpty()) || (txtEmail.getText().isEmpty()) || (txtEndereco.getText().isEmpty()) || (txtBairro.getText().isEmpty())
+                    || (txtCidade.getText().isEmpty()) || (txtCEP.getText().isEmpty())) {
+                JOptionPane.showMessageDialog(this, "Preencha os campos obrigatórios!");
+            } else {
+                int adicionado = pst.executeUpdate();
+                if (adicionado > 0) {
+                    JOptionPane.showMessageDialog(this, "Dados alterado com sucesso!");
+                    limpar();
+                    txtNome.setText(null);
+                    txtCPF.setText(null);
+                    txtDataNasc.setText(null);
+                    txtProfissao.setText(null);
+                    txtRenda.setText(null);
+                    txtTelefone.setText(null);
+                    txtCelular.setText(null);
+                    txtEmail.setText(null);
+                    boxLogradouro.setSelectedItem(null);
+                    txtEndereco.setText(null);
+                    txtNumero.setText(null);
+                    txtComplemento.setText(null);
+                    txtBairro.setText(null);
+                    txtCidade.setText(null);
+                    txtCEP.setText(null);
+                    BoxEstadoCivil.setSelectedItem(null);
+                    txtNomeConjuge.setText(null);
+                    txtCPFConjuge.setText(null);
+                    txtDataNascConjuge.setText(null);
+                    txtProfissaoConjuge.setText(null);
+                    txtRendaConjuge.setText(null);
+                    btnNovo1.setEnabled(true);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+
+        }
+    }
+
+    // feito
+    private void removerComprado() {
+        //a estrutura abaixo confirma a remoção do cliente
+        int confirma = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja remover este cliente ?", "Atenção", JOptionPane.YES_NO_OPTION);
+        if (confirma == JOptionPane.YES_OPTION) {
+            String sql = "delete from tb_cadastropessoa where cpf = ?";
+            try {
+                pst = conn.prepareStatement(sql);
+                pst.setString(1, txtCPF.getText());
+                int apagado = pst.executeUpdate();
+                if (apagado > 0) {
+                    JOptionPane.showMessageDialog(this, "Cliente Removido com sucesso");
+                    txtNome.setText(null);
+                    txtCPF.setText(null);
+                    txtDataNasc.setText(null);
+                    txtProfissao.setText(null);
+                    txtRenda.setText(null);
+                    txtTelefone.setText(null);
+                    txtCelular.setText(null);
+                    txtEmail.setText(null);
+                    boxLogradouro.setSelectedItem(null);
+                    txtEndereco.setText(null);
+                    txtNumero.setText(null);
+                    txtComplemento.setText(null);
+                    txtBairro.setText(null);
+                    txtCidade.setText(null);
+                    txtCEP.setText(null);
+                    BoxEstadoCivil.setSelectedItem(null);
+                    txtNomeConjuge.setText(null);
+                    txtCPFConjuge.setText(null);
+                    txtDataNascConjuge.setText(null);
+                    txtProfissaoConjuge.setText(null);
+                    txtRendaConjuge.setText(null);
+                    boxLogradouroImovel.setSelectedItem(null);
+                    txtEnderecoImovel.setText(null);
+                    txtNumeroImovel.setText(null);
+                    txtCompImovel.setText(null);
+                    txtBairroImovel.setText(null);
+                    txtCidadeImovel.setText(null);
+                    boxImovel.setSelectedItem(null);
+                    txtCEP_Imovel.setText(null);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, e);
+
+            }
+        }
+    }
+
+    private void pesquisar_comprador() {
+        String sql = "select * from tb_cadastropessoa where cpf = ?";
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, txtCPF.getText());
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                txtNome.setText(rs.getString(1));
+                txtCPF.setText(rs.getString(2));
+                txtDataNasc.setText(rs.getString(3));
+                txtProfissao.setText(rs.getString(4));
+                txtRenda.setText(rs.getString(5));
+                txtTelefone.setText(rs.getString(6));
+                txtCelular.setText(rs.getString(7));
+                txtEmail.setText(rs.getString(8));
+                boxLogradouro.setSelectedItem(rs.getString(9));
+                txtEndereco.setText(rs.getString(10));
+                txtNumero.setText(rs.getString(11));
+                txtComplemento.setText(rs.getString(12));
+                txtBairro.setText(rs.getString(13));
+                txtCidade.setText(rs.getString(14));
+                BoxUF.setSelectedItem(rs.getString(15));
+                txtCEP.setText(rs.getString(16));
+                BoxEstadoCivil.setSelectedItem(rs.getString(17));
+                txtNomeConjuge.setText(rs.getString(18));
+                txtCPFConjuge.setText(rs.getString(19));
+                txtDataNascConjuge.setText(rs.getString(20));
+                txtProfissaoConjuge.setText(rs.getString(21));
+                txtRendaConjuge.setText(rs.getString(22));
+            } else {
+                JOptionPane.showMessageDialog(this, "Dados não localizados, informe o CPF correto");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    private void adicionarImovel() {
+        String sql = "insert into tb_cadastroimovel(logradouroImovel, enderecoImovel, numeroEndeImovel, complementoImovel, bairroImovel, cidadeImovel, "
+                + "ufImovel, cepImovel, vendedor) values (?,?,?,?,?,?,?,?,?)";
+
+        try {
+            //imovel
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, boxLogradouroImovel.getSelectedItem().toString());
+            pst.setString(2, txtEnderecoImovel.getText());
+            pst.setString(3, txtNumeroImovel.getText());
+            pst.setString(4, txtCompImovel.getText());
+            pst.setString(5, txtBairroImovel.getText());
+            pst.setString(6, txtCidadeImovel.getText());
+            pst.setString(7, boxImovel.getSelectedItem().toString());
+            pst.setString(8, txtCEP_Imovel.getText());
+            pst.setString(9, txtCPFVend.getText());
+
+            if ((txtCPFVend.getText().toString().isEmpty()) || (boxLogradouroImovel.getSelectedItem().toString().isEmpty()) || (txtEnderecoImovel.getText().isEmpty()) || (txtNumeroImovel.getText().isEmpty())
+                    || txtCompImovel.getText().isEmpty() || txtBairroImovel.getText().isEmpty() || txtCidadeImovel.getText().isEmpty() || boxImovel.getSelectedItem().toString().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
+            } else {
+                int adicionado = pst.executeUpdate();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
+        try {
+            String sql2 = "insert into tb_cadastrovendedor(nome, cpf, email, telefone, celular, logradouro, endereco, numeroEnde, "
+                    + "complemento, bairro, cidade, uf, cep, estadoCivil, nomeConj, cpfConj) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            pst = conn.prepareStatement(sql2);
+            pst.setString(1, txtNomeVend.getText());
+            pst.setString(2, txtCPFVend.getText());
+            pst.setString(3, txtEmailVend.getText());
+            pst.setString(4, txtTelVend.getText());
+            pst.setString(5, txtCelVend.getText());
+            pst.setString(6, boxLogradouroImovel1.getSelectedItem().toString());
+            pst.setString(7, txtEndVend.getText());
+            pst.setString(8, txtNumeroVend.getText());
+            pst.setString(9, txtCompIVend.getText());
+            pst.setString(10, txtBairroVend.getText());
+            pst.setString(11, txtCidadeVend.getText());
+            pst.setString(12, boxImovel1.getSelectedItem().toString());
+            pst.setString(13, txtCEP_Vend.getText());
+            pst.setString(14, boxVend.getSelectedItem().toString());
+            pst.setString(15, txtNomeVend1.getText());
+            pst.setString(16, txtCPFVendConj.getText());
+
+            int adicionado = pst.executeUpdate();
+            limpar();
+            JOptionPane.showMessageDialog(this, "Dados inseridos com sucesso!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }
+
+    private void pesquisar_dadosImovel() {
+        String sql = "select * from tb_cadastropessoa where cpf = ?";
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, txtCPF.getText());
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                txtNome.setText(rs.getString(1));
+                txtCPF.setText(rs.getString(2));
+                txtDataNasc.setText(rs.getString(3));
+                txtProfissao.setText(rs.getString(4));
+                txtRenda.setText(rs.getString(5));
+                txtTelefone.setText(rs.getString(6));
+                txtCelular.setText(rs.getString(7));
+                txtEmail.setText(rs.getString(8));
+                boxLogradouro.setSelectedItem(rs.getString(9));
+                txtEndereco.setText(rs.getString(10));
+                txtNumero.setText(rs.getString(11));
+                txtComplemento.setText(rs.getString(12));
+                txtBairro.setText(rs.getString(13));
+                txtCidade.setText(rs.getString(14));
+                BoxUF.setSelectedItem(rs.getString(15));
+                txtCEP.setText(rs.getString(16));
+                BoxEstadoCivil.setSelectedItem(rs.getString(17));
+                txtNomeConjuge.setText(rs.getString(18));
+                txtCPFConjuge.setText(rs.getString(19));
+                txtDataNascConjuge.setText(rs.getString(20));
+                txtProfissaoConjuge.setText(rs.getString(21));
+                txtRendaConjuge.setText(rs.getString(22));
+            } else {
+                JOptionPane.showMessageDialog(this, "Dados não localizados, informe o CPF correto");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }
+
+    public void limpar() {
+
+        //comprador
+        txtNome.setText(null);
+        txtCPF.setText(null);
+        txtDataNasc.setText(null);
+        txtProfissao.setText(null);
+        txtRenda.setText(null);
+        txtTelefone.setText(null);
+        txtCelular.setText(null);
+        txtEmail.setText(null);
+        boxLogradouro.setSelectedItem(null);
+        txtEndereco.setText(null);
+        txtNumero.setText(null);
+        txtComplemento.setText(null);
+        txtBairro.setText(null);
+        txtCidade.setText(null);
+        txtCEP.setText(null);
+        BoxEstadoCivil.setSelectedItem(null);
+        txtNomeConjuge.setText(null);
+        txtCPFConjuge.setText(null);
+        txtDataNascConjuge.setText(null);
+        txtProfissaoConjuge.setText(null);
+        txtRendaConjuge.setText(null);
+        boxLogradouroImovel.setSelectedItem(null);
+        txtEnderecoImovel.setText(null);
+        txtNumeroImovel.setText(null);
+        txtCompImovel.setText(null);
+        txtBairroImovel.setText(null);
+        txtCidadeImovel.setText(null);
+        boxImovel.setSelectedItem(null);
+        txtCEP_Imovel.setText(null);
+
+        //vendedores
+        txtNomeVend.setText(null);
+        txtCPFVend.setText(null);
+        txtTelVend.setText(null);
+        txtCelVend.setText(null);
+        txtEmailVend.setText(null);
+        boxLogradouroImovel1.setSelectedItem(null);
+        txtEndVend.setText(null);
+        txtNumeroVend.setText(null);
+        txtCompIVend.setText(null);
+        txtBairroVend.setText(null);
+        txtCidadeVend.setText(null);
+        txtCEP_Vend.setText(null);
+        boxVend.setSelectedItem(null);
+        txtNomeVend1.setText(null);
+        txtCPFVendConj.setText(null);
+    }
+
+    private void alterarImovel() {
+        String sql = "update tb_cadastroimovel set logradouroImovel=?, enderecoImovel=?, numeroEndeImovel=?, complementoImovel=?, bairroImovel=?, cidadeImovel=?, "
+                + "ufImovel=?, cepImovel=?";
+
+        try {
+            //vendedor
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, boxLogradouroImovel.getSelectedItem().toString());
+            pst.setString(2, txtEnderecoImovel.getText());
+            pst.setString(3, txtNumeroImovel.getText());
+            pst.setString(4, txtCompImovel.getText());
+            pst.setString(5, txtBairroImovel.getText());
+            pst.setString(6, txtCidadeImovel.getText());
+            pst.setString(7, boxImovel.getSelectedItem().toString());
+            pst.setString(8, txtCEP_Imovel.getText());
+
+            if ((txtNome.getText().isEmpty()) || (txtCPF.getText().isEmpty()) || (txtDataNasc.getText().isEmpty()) || (txtProfissao.getText().isEmpty()) || (txtRenda.getText().isEmpty())
+                    || (txtCelular.getText().isEmpty()) || (txtEmail.getText().isEmpty()) || (txtEndereco.getText().isEmpty()) || (txtBairro.getText().isEmpty())
+                    || (txtCidade.getText().isEmpty()) || (txtCEP.getText().isEmpty())) {
+                JOptionPane.showMessageDialog(this, "Preencha os campos obrigatórios!");
+            } else {
+                int adicionado = pst.executeUpdate();
+                if (adicionado > 0) {
+                    JOptionPane.showMessageDialog(this, "Dados alterado com sucesso!");
+                    boxLogradouroImovel.setSelectedItem(null);
+                    txtEnderecoImovel.setText(null);
+                    txtNumeroImovel.setText(null);
+                    txtCompImovel.setText(null);
+                    txtBairroImovel.setText(null);
+                    txtCidadeImovel.setText(null);
+                    boxImovel.setSelectedItem(null);
+                    txtCEP_Imovel.setText(null);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+
+        }
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> BoxEstadoCivil;
@@ -768,15 +1226,13 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JButton brnEditar1;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCancelar1;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnImprimir;
-    private javax.swing.JButton btnImprimir1;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnNovo1;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnPesquisar1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -818,7 +1274,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblNumeroVend;
     private javax.swing.JLabel lblProfissao;
     private javax.swing.JLabel lblProfissaoConjuge;
-    private javax.swing.JLabel lblProfissaoVend;
     private javax.swing.JLabel lblRendaConjuge;
     private javax.swing.JLabel lblTelefone1;
     private javax.swing.JLabel lblUF;
@@ -839,7 +1294,6 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCPFVend;
     private javax.swing.JTextField txtCPFVendConj;
     private javax.swing.JTextField txtCelVend;
-    private javax.swing.JTextField txtCelVendConj;
     private javax.swing.JTextField txtCelular;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtCidadeImovel;
@@ -854,6 +1308,7 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtEndVend;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtEnderecoImovel;
+    private javax.swing.JTextField txtIdImovel;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNomeConjuge;
     private javax.swing.JTextField txtNomeVend;
@@ -863,11 +1318,9 @@ public class InternalCadastro extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtNumeroVend;
     private javax.swing.JTextField txtProfissao;
     private javax.swing.JTextField txtProfissaoConjuge;
-    private javax.swing.JTextField txtProfissaoVend;
     private javax.swing.JTextField txtRenda;
     private javax.swing.JTextField txtRendaConjuge;
     private javax.swing.JTextField txtTelVend;
-    private javax.swing.JTextField txtTelVendConj;
     private javax.swing.JTextField txtTelefone;
     private javax.swing.JLabel txtTelefone2;
     // End of variables declaration//GEN-END:variables

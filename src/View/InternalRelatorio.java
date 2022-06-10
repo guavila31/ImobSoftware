@@ -6,6 +6,10 @@ package View;
 
 import com.formdev.flatlaf.ui.FlatTextBorder;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -14,6 +18,9 @@ import javax.swing.UIManager;
  */
 public class InternalRelatorio extends javax.swing.JInternalFrame {
 
+    private Connection conn;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
     /**
      * Creates new form InternalRelatorio
      */
@@ -22,15 +29,35 @@ public class InternalRelatorio extends javax.swing.JInternalFrame {
     public static InternalRelatorio getInstance() {
         if (instance == null) {
             instance = new InternalRelatorio();
+
         }
         return instance;
     }
 
     public InternalRelatorio() {
         initComponents();
+
 //        this.getContentPane().setBackground(Color.decode("#1d5e69"));
         UIManager.put("TextField.background", Color.decode("#263238"));
 
+    }
+
+    private void totalComissao() {
+        String sql = "select ROUND(SUM(valor)*0.013,2) from tb_contrato";
+        try {
+            //as linhas abaixo preparam a consulta em função do que foi 
+            //digitado nas caixas de texto. O ? é substituído pelo conteúdo
+            //das variáveis que são armazenadas em pst.setString
+            pst = conn.prepareStatement(sql);
+            //a linha abaixo executa a query(consulta)
+            rs = pst.executeQuery();
+            //se existir um usuário e senha correspondente
+            //a estrutura abaixo faz o tratamento do perfil do usuário
+            rs.next();
+            lblComissao.setText(rs.getString(1));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     /**
@@ -53,11 +80,12 @@ public class InternalRelatorio extends javax.swing.JInternalFrame {
         jComboBox3 = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        lblComissao = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtComissao = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
@@ -72,6 +100,24 @@ public class InternalRelatorio extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(1440, 884));
         setPreferredSize(new java.awt.Dimension(1500, 900));
         setRequestFocusEnabled(false);
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -135,6 +181,10 @@ public class InternalRelatorio extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel2);
         jPanel2.setBounds(940, 30, 300, 300);
 
+        lblComissao.setText("jLabel6");
+        getContentPane().add(lblComissao);
+        lblComissao.setBounds(770, 490, 90, 30);
+
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -172,18 +222,17 @@ public class InternalRelatorio extends javax.swing.JInternalFrame {
         getContentPane().add(jTextField4);
         jTextField4.setBounds(1260, 380, 165, 60);
 
-        jTextField5.setEditable(false);
-        jTextField5.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setText("999.999,00");
-        jTextField5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Total Comissão", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 15), new java.awt.Color(243, 225, 182))); // NOI18N
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtComissao.setEditable(false);
+        txtComissao.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
+        txtComissao.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtComissao.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(29, 94, 105)), "Total Comissão", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 15), new java.awt.Color(243, 225, 182))); // NOI18N
+        txtComissao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtComissaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(730, 470, 165, 60);
+        getContentPane().add(txtComissao);
+        txtComissao.setBounds(730, 470, 165, 60);
 
         jTextField6.setEditable(false);
         jTextField6.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
@@ -233,6 +282,11 @@ public class InternalRelatorio extends javax.swing.JInternalFrame {
         jTextField9.setBounds(1260, 560, 165, 60);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/BOTAO_IMPRIMIR_700x100.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(740, 670, 700, 100);
 
@@ -247,9 +301,9 @@ public class InternalRelatorio extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtComissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComissaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtComissaoActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
@@ -258,6 +312,19 @@ public class InternalRelatorio extends javax.swing.JInternalFrame {
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_formInternalFrameActivated
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formInternalFrameOpened
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -277,10 +344,11 @@ public class InternalRelatorio extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lblComissao;
+    private javax.swing.JTextField txtComissao;
     // End of variables declaration//GEN-END:variables
 }

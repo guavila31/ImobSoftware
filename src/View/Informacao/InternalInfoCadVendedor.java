@@ -129,7 +129,7 @@ public class InternalInfoCadVendedor extends javax.swing.JInternalFrame {
             try {
                 HashMap filtro = new HashMap();
                 filtro.put("vendedor", txtPesqCpf.getText());
-                filtro.put("idImovel", txtIdImovel.getText());
+                filtro.put("id", txtIdImovel.getText());
                 JasperPrint print = JasperFillManager.fillReport("C:/Users/gusta/Documents/Relatorios/Ficha_Cadastro_Imovel.jasper", filtro, conn);
                 JasperViewer.viewReport(print, false);
             } catch (Exception e) {

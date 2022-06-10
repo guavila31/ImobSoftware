@@ -6,10 +6,14 @@ package View;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialOceanicContrastIJTheme;
+import dao.ConnectionFactory;
 import dao.UsuarioDAO;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -20,7 +24,10 @@ import javax.swing.UIManager;
 public class DialogLogin extends javax.swing.JDialog {
 
     private boolean autenticado;
+    private Connection conn;
     private UsuarioDAO usuarioDAO;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
 
     public boolean getAutenticado() {
         return autenticado;
@@ -32,6 +39,7 @@ public class DialogLogin extends javax.swing.JDialog {
     public DialogLogin(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        conn = ConnectionFactory.getConnection();
         this.btnCancelar.setBackground(Color.decode("#fa3419"));
         this.btnCancelar.setForeground(Color.decode("#f3e1b6"));
         usuarioDAO = new UsuarioDAO();
@@ -44,6 +52,25 @@ public class DialogLogin extends javax.swing.JDialog {
             }
         });
 
+    }
+
+    private void nomeUsuario() {
+        String sql = "SELECT login FROM tb_usuario WHERE login = ?";
+        try {
+            //as linhas abaixo preparam a consulta em função do que foi 
+            //digitado nas caixas de texto. O ? é substituído pelo conteúdo
+            //das variáveis que são armazenadas em pst.setString
+            pst = conn.prepareStatement(sql);
+            //a linha abaixo executa a query(consulta)
+            rs = pst.executeQuery();
+            //se existir um usuário e senha correspondente
+            //a estrutura abaixo faz o tratamento do perfil do usuário
+            rs.next();
+            String usuario;
+            usuario = (rs.getString(1));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     /**

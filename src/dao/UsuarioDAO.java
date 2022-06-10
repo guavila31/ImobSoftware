@@ -36,4 +36,34 @@ public class UsuarioDAO {
         }
         return false;
     }
+
+    public boolean autenticarADM(String login, String senha) {
+
+        try {
+            PreparedStatement stmt = conn.prepareStatement("select * from tb_adminstrador where login = ? and senha = ?");
+            stmt.setString(1, login);
+            stmt.setString(2, senha);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
+    public boolean InserirUsuario(String login, String senha, String email, String telefone) {
+
+        try {
+            PreparedStatement stmt = conn.prepareStatement("insert into tb_adminstrador (login, senha, email, telefone) VALUES (?,?,?,?);");
+            stmt.setString(1, login);
+            stmt.setString(2, senha);
+            stmt.setString(3, email);
+            stmt.setString(4, telefone);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
 }
